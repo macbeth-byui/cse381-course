@@ -2,7 +2,7 @@
 
 namespace AlgorithmLib;
 
-public class RSA2
+public class RSA
 {
     private static (BigInteger, BigInteger, BigInteger) Euclid(BigInteger a, BigInteger b)
     {

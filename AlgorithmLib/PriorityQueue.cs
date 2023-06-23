@@ -1,7 +1,7 @@
 ﻿namespace AlgorithmLib;
 
 
-public class PriorityQueue2<T> where T : notnull
+public class PriorityQueue<T> where T : notnull
 {
     private class PqNode
     {
