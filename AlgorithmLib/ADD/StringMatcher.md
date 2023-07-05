@@ -12,9 +12,7 @@ String Matcher
 
 ## 3. Methodology
 
-## 4. Diagrams
-
-## 5. Pseudocode
+## 4. Pseudocode
 
 ```
 BUILD-TABLE(pattern, inputs)
@@ -23,7 +21,7 @@ MATCH(text, pattern, inputs)
 
 ```
 
-## 6. Inputs & Outputs
+## 5. Inputs & Outputs
 
 List only inputs and outputs for the MATCH function. 
 
@@ -31,7 +29,7 @@ Inputs:
 
 Outputs:
 
-## 7. Analysis Results
+## 6. Analysis Results
 
 * Worst Case: $\Omicron(?)$
 

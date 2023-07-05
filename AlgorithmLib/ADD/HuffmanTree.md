@@ -11,9 +11,7 @@ Huffman Tree Compression
 
 ## 3. Methodology
 
-## 4. Diagrams
-
-## 5. Pseudocode
+## 4. Pseudocode
 
 ```
 PROFILE(text)
@@ -32,7 +30,7 @@ DECODE(text, tree)
 
 ```
 
-## 6. Inputs & Outputs
+## 5. Inputs & Outputs
 
 List only inputs and outputs for Encode and Decode functions.
 
@@ -41,7 +39,7 @@ Inputs:
 Outputs:
 
 
-## 7. Analysis Results
+## 6. Analysis Results
 
 Encode Function:
 * Worst Case: $\Omicron(?)$

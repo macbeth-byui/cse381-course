@@ -11,22 +11,20 @@ Binary Search
 
 ## 3. Methodology
 
-## 4. Diagrams
-
-## 5. Pseudocode
+## 4. Pseudocode
 
 ```
 BINARY-SEARCH(data, target)
 
 ```
 
-## 6. Inputs & Outputs
+## 5. Inputs & Outputs
 
 Inputs:
 
 Outputs:
 
-## 7. Analysis Results
+## 6. Analysis Results
 
 * Worst Case: $\Omicron(?)$
 

@@ -11,22 +11,20 @@ Directed Acyclic Graph (DAG) Shortest Path
 
 ## 3. Methodology
 
-## 4. Diagrams
-
-## 5. Pseudocode
+## 4. Pseudocode
 
 ```
 SHORTEST-PATH(graph, start_vertex)
 
 ```
 
-## 6. Inputs & Outputs
+## 5. Inputs & Outputs
 
 Inputs:
 
 Outputs:
 
-## 7. Analysis Results
+## 6. Analysis Results
 
 * Worst Case: $\Omicron(?)$
 

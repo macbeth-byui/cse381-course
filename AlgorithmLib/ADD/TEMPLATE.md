@@ -1,8 +1,8 @@
 # Algorithm Description Document
 
-Author: ???
+Author: Your Name Here
 
-Date: ??/??/????
+Date: Date Submitted
 
 ## 1. Name
 Name of the Algorithm
@@ -13,20 +13,18 @@ One sentence describing the algorithm.
 ## 3. Methodology
 At least one paragraph describing the purpose of the algorithm and how it works.  Include references to any other algorithms that this algorithm uses.
 
-## 4. Diagrams
-
-One of more diagrams describing visually how the algorithm works.
+Optionally (and for bonus points) include a diagram (not hand drawn) that describes how the algorithm works.  You can use a tool like draw.io.
 
 ![](images/smile.png)
 
-## 5. Pseudocode
+## 4. Pseudocode
 
 ```
 ALGORITHM-NAME(input1, input2)
     PYTHON LIKE PSEUDOCODE HERE
 ```
 
-## 6. Inputs & Outputs
+## 5. Inputs & Outputs
 
 Inputs:
 * Describe each of the inputs form the pseudoode
@@ -34,7 +32,9 @@ Inputs:
 Outputs:
 * Describe each of the outputs from the pseudocode including any error conditions
 
-## 7. Analysis Results
+## 6. Analysis Results
+
+Replace the `?` with the appropriate value.
 
 * Worst Case: $\Omicron(?)$
 

@@ -11,9 +11,7 @@ Merge Sort
 
 ## 3. Methodology
 
-## 4. Diagrams
-
-## 5. Pseudocode
+## 4. Pseudocode
 
 ```
 MERGE(data, first, mid, last)
@@ -23,7 +21,7 @@ SORT(data, first, last)
 
 ```
 
-## 6. Inputs & Outputs
+## 5. Inputs & Outputs
 
 List only inputs and outputs for the SORT function.
 
@@ -31,7 +29,7 @@ Inputs:
 
 Outputs:
 
-## 7. Analysis Results
+## 6. Analysis Results
 
 * Worst Case: $\Omicron(?)$
 
