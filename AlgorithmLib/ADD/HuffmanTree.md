@@ -34,7 +34,7 @@ DECODE(text, tree)
 
 ## 6. Inputs & Outputs
 
-List only inputs and outputs for ENCODE and DECODE functions.
+List only inputs and outputs for Encode and Decode functions.
 
 Inputs:
 
@@ -43,6 +43,14 @@ Outputs:
 
 ## 7. Analysis Results
 
+Encode Function:
+* Worst Case: $\Omicron(?)$
+
+* Average Case: $\Theta(?)$
+
+* Best Case: $\Omega(?)$
+
+Decode Function:
 * Worst Case: $\Omicron(?)$
 
 * Average Case: $\Theta(?)$
