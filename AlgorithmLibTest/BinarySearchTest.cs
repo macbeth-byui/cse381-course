@@ -11,7 +11,7 @@ public class BinarySearchTest
     {
         IComparable[] array = { 1, 2, 3, 4, 5, 6 };
         var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(ref data, 6);
+        var index = BinarySearch.Search(data, 6);
         Assert.That(index, Is.EqualTo(5));
         Assert.Pass();
     }
@@ -22,7 +22,7 @@ public class BinarySearchTest
     {
         IComparable[] array = { 1, 2, 3, 4, 5, 6 };
         var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(ref data, 1);
+        var index = BinarySearch.Search(data, 1);
         Assert.That(index, Is.EqualTo(0));
         Assert.Pass();
     }
@@ -33,7 +33,7 @@ public class BinarySearchTest
     {
         IComparable[] array = { 1, 2, 3, 4, 5, 6 };
         var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(ref data, 4);
+        var index = BinarySearch.Search(data, 4);
         Assert.That(index, Is.EqualTo(3));
         Assert.Pass();
     }
@@ -44,7 +44,7 @@ public class BinarySearchTest
     {
         IComparable[] array = { 1, 2, 3, 4, 5, 6 };
         var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(ref data, 10);
+        var index = BinarySearch.Search(data, 10);
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();
     }
@@ -55,7 +55,7 @@ public class BinarySearchTest
     {
         IComparable[] array = { 1, 2, 3, 4, 5, 6 };
         var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(ref data, 0);
+        var index = BinarySearch.Search(data, 0);
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();
     }
@@ -65,7 +65,7 @@ public class BinarySearchTest
     public void Test6()
     {
         var empty = new List<IComparable>();
-        var index = BinarySearch.Search(ref empty,7);
+        var index = BinarySearch.Search(empty,7);
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();
     }

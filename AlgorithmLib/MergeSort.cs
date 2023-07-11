@@ -2,12 +2,12 @@
 
 public static class MergeSort
 {
-    private static void Merge(ref List<IComparable> data, int first, int mid, int last)
+    private static void Merge(List<IComparable> data, int first, int mid, int last)
     {
         // ADD CODE HERE 
     }
 
-    public static void Sort(ref List<IComparable> data)
+    public static void Sort(List<IComparable> data)
     {
         // ADD CODE HERE 
     }

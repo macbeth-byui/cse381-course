@@ -12,7 +12,7 @@ public class MergeSortTest
         IComparable[] sortedArray = { 1, 2, 3, 4, 5, 6 };
         IComparable[] unsortedArray = { 3, 5, 2, 6, 1, 4 };
         var data = new List<IComparable>(unsortedArray);
-        MergeSort.Sort(ref data);
+        MergeSort.Sort(data);
         Assert.That(data.SequenceEqual(sortedArray), Is.True);
         Assert.Pass();
     }
@@ -23,7 +23,7 @@ public class MergeSortTest
     {
         IComparable[] sortedArray = { 1, 2, 3, 4, 5, 6 };
         var data = new List<IComparable>(sortedArray);
-        MergeSort.Sort(ref data);
+        MergeSort.Sort(data);
         Assert.That(data.SequenceEqual(sortedArray), Is.True);
         Assert.Pass();
     }
@@ -35,7 +35,7 @@ public class MergeSortTest
     {
         IComparable[] sortedArray = Array.Empty<IComparable>();
         var data = new List<IComparable>();
-        MergeSort.Sort(ref data);
+        MergeSort.Sort(data);
         Assert.That(data.SequenceEqual(sortedArray), Is.True);
         Assert.Pass();
     }
