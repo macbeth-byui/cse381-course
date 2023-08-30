@@ -37,8 +37,6 @@ Outputs:
 
 ## 6. Analysis Results
 
-* Worst Case: $\Omicron(n)$
-
-* Average Case: $\Theta(n)$
+* Worst Case: $O(n)$
 
 * Best Case: $\Omega(1)$

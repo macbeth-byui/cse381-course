@@ -31,8 +31,7 @@ Outputs:
 
 ## 6. Analysis Results
 
-* Worst Case: $\Omicron(?)$
-
-* Average Case: $\Theta(?)$
+* Worst Case: $\O(?)$
 
 * Best Case: $\Omega(?)$
+

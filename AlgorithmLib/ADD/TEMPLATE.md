@@ -36,8 +36,6 @@ Outputs:
 
 Replace the `?` with the appropriate value.
 
-* Worst Case: $\Omicron(?)$
-
-* Average Case: $\Theta(?)$
+* Worst Case: $O(?)$
 
 * Best Case: $\Omega(?)$

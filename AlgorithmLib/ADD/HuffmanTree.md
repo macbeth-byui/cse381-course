@@ -42,16 +42,14 @@ Outputs:
 ## 6. Analysis Results
 
 Encode Function:
-* Worst Case: $\Omicron(?)$
-
-* Average Case: $\Theta(?)$
+* Worst Case: $\O(?)$
 
 * Best Case: $\Omega(?)$
+
 
 Decode Function:
-* Worst Case: $\Omicron(?)$
-
-* Average Case: $\Theta(?)$
+* Worst Case: $\O(?)$
 
 * Best Case: $\Omega(?)$
+
 
