@@ -31,7 +31,7 @@ Outputs:
 
 ## 6. Analysis Results
 
-* Worst Case: $\O(?)$
+* Worst Case: $O(?)$
 
 * Best Case: $\Omega(?)$
 
