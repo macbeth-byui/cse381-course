@@ -5,7 +5,7 @@ public static class HuffmanTree
     public class Node
     {
         public char Letter { get; set; }
-        public float Count { get; init; }
+        public float Count { get; set; }
         
         public Node? Left;
         public Node? Right;
