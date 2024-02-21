@@ -18,7 +18,7 @@ The inclusion of a picture describing the how the algorithm works will earn bonu
 
 ## 4. Analysis Results
 
-The performance of the shortest path (where $V$ is the number of verticies and $E$ is the number of edges):
+The performance of the shortest path (where $V$ is the number of vertices and $E$ is the number of edges):
 
 * Worst Case: $O()$
 * Best Case: $\Omega()$
