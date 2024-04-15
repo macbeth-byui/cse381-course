@@ -1,4 +1,12 @@
-﻿using AlgorithmLib;
+﻿/*  CSE 381 - Bellman Ford Test
+ *  (c) BYU-Idaho - It is an honor code violation to post this
+ *  file completed in a public file sharing site. S4.
+ *
+ *  Instructions: Do not modify this file.  Use these test to verify
+ *  that your code is working properly.
+*/
+
+using AlgorithmLib;
 using NUnit.Framework;
 
 namespace AlgorithmLibTest;
@@ -6,8 +14,9 @@ namespace AlgorithmLibTest;
 [TestFixture]
 public class BellmanFordShortestPathTest
 {
+    
     [Test]
-    public void Test1()
+    public void Test1_NoNegativeCycle()
     {
         Graph g = new(5);
         g.SetLabel(0, "s");
@@ -36,9 +45,12 @@ public class BellmanFordShortestPathTest
         Assert.That(pred[2], Is.EqualTo(3));
         Assert.That(pred[3], Is.EqualTo(0));
         Assert.That(pred[4], Is.EqualTo(1));
-
-
-        g = new(5);
+    }
+    
+    [Test]
+    public void Test2_NegativeCycle()
+    {
+        Graph g = new Graph(5);
         g.SetLabel(0, "s");
         g.SetLabel(1, "t");
         g.SetLabel(2, "x");
@@ -54,7 +66,7 @@ public class BellmanFordShortestPathTest
         g.AddDirectedEdge(3, 4, 9);
         g.AddDirectedEdge(4, 0, 2);
         g.AddDirectedEdge(4, 2, 7);
-        (distance, pred) = BellmanFordShortestPath.ShortestPath(g, 0);
+        var (distance, pred) = BellmanFordShortestPath.ShortestPath(g, 0);
         if (distance.Count == 0) {
             Assert.Pass();
         }

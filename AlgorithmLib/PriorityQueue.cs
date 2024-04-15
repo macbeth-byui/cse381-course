@@ -1,16 +1,28 @@
-﻿namespace AlgorithmLib;
+﻿/* CSE 381 - Priority Queue
+*  (c) BYU-Idaho - It is an honor code violation to post this
+*  file completed in a public file sharing site. S4.
+*
+*  Do not modify this file.  You will use this in your code.
+*/
+
+namespace AlgorithmLib;
 
 
 public class PriorityQueue<T> where T : notnull
 {
+    // Each node in the priority queue contains a value
+    // and a priority (number)
     private class PqNode
     {
         public T Value { get; init; } = default!;
-        public IComparable Priority { get; set; } = default!;
+        public int Priority { get; set; }
     }
     
+    // Will represent the priority queue as an array/list
     private readonly List<PqNode> _heap = new();
-    private readonly Dictionary<T,int> _lookup = new(); // value to array index
+    
+    // Quick lookup to find a node based on the value 
+    private readonly Dictionary<T,int> _lookup = new(); 
 
     // Functions to find parent, children, and leaf status when using an array for the heap
     private static int Parent(int index)
@@ -33,8 +45,7 @@ public class PriorityQueue<T> where T : notnull
         return 2 * index + 2;
     }
     
-    // Starting at curr, compare values going up to the root
-    // Swap if they are not ordered properly
+    // Start at node at index curr and swap up as needed
     private void BubbleUp(int curr)
     {
         while (curr > 0)
@@ -52,6 +63,7 @@ public class PriorityQueue<T> where T : notnull
         }
     }
 
+    // Start at node at index curr and swap down as needed
     private void BubbleDown(int curr)
     {
         while (!IsLeaf(curr))
@@ -87,7 +99,8 @@ public class PriorityQueue<T> where T : notnull
         }
     }
 
-    public void DecreaseKey(T value, IComparable priority)
+    // Decrease the priority of a node and update the queue
+    public void DecreaseKey(T value, int priority)
     {
         // Get location of value in the array 
         var curr = _lookup[value];
@@ -97,7 +110,8 @@ public class PriorityQueue<T> where T : notnull
         BubbleUp(curr);
     }
 
-    public void Insert(T value, IComparable priority)
+    // Add a new value with a priority to the queue
+    public void Insert(T value, int priority)
     {
         // Create the new node
         var newNode = new PqNode { Priority = priority, Value = value };
@@ -111,6 +125,7 @@ public class PriorityQueue<T> where T : notnull
 
     }
 
+    // Remove the smallest value (at index 0) of the queue.
     public T Dequeue()
     {
         // Special case if queue is empty
@@ -133,16 +148,10 @@ public class PriorityQueue<T> where T : notnull
         return result.Value;
     }
 
+    // Get the number of nodes in the priority queue
     public int Size()
     {
         return _heap.Count;
     }
 
-    public void PrintHeap()
-    {
-        foreach (var pair in _heap)
-        {
-            Console.WriteLine($"{pair.Value} - p{pair.Priority}");
-        }
-    }
 }

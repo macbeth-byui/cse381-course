@@ -1,52 +1,33 @@
-# Algorithm Report
+# Bellman Ford - Algorithm Report
 
-Author: 
+(c) BYU-Idaho - It is an honor code violation to post this file completed in a public file sharing site. S4.
 
-Date: 
+Name: Chad Macbeth
 
-## 1. Name
-Bellman Ford Shortest Path
+## 1. Code (60%)
 
-## 2. Overview & Purpose
-<!-- Describe the purpose of the algorithm and what it is used for. -->
+Make sure that you submit both the BellmanFord.cs file and this markdown file.
 
-## 3. Methodology
-<!-- Describe the design of the algorithm.  This should be detailed enough to both understand how the algorithm works and be sufficient to code in any language.  Detailed descriptions will be more than 100 words. 
+## 2. Methodology (20%)
 
-The inclusion of a picture describing the how the algorithm works will earn bonus points.
-![](images/smile.png) -->
+NOTE: Do not copy/paste from an AI or the book.  Answer these questions in your own words without code.  You will either receive a grade of `Correct`, `More Detail Needed`, or `Incorrect` for each question.
 
-## 4. Performance
+1. Explain why the Bellman Ford algorithm attempts to relax all the edges V-1 times (where V is the number of verticies).
+
+2. Explain how this algorithm is a better choice for graphs with negative weights as compared with Dijkstra.
+
+3. Explain how this algorithm can detect a negative cycle.  Can the algorithm detect a positive cycle?
+
+## 3. Performance (10%)
 
 The performance for the shortest path (where $V$ is the number of verticies in the graph and $E$ is the number of edges):
 
 * Worst Case: $O()$
 * Best Case: $\Omega()$
 
-## 5. AI Report
+## 4. AI Research (10%)
 
-### 5.1 Research
+NOTE: Do not copy/paste from the AI.  Describe what you learned in at least 100 of your own words.
 
-Research this algorithm on ChatGPT by asking at least 5 questions (e.g. follow-up questions from the previous response, things from the reading or class that was confusing).  Identify at least 2 things that you learned about the algorithm from your research:
-
-1.
-2.
-
-### 5.2 Code Comparison
-
-Ask ChatGPT to write code for this algorithm in C#.  Compare the code that you wrote with the code that ChatGPT responded with.  Identify any differences from your code, explain why they are different, and determine if the differences should be adopted.
-
-1.
-2.
-
-### 5.3 Code Use
-
-Identify any fixes or improvements you made to your code after reviewing the code provided by the ChatGPT:
-
-1.
-2.
-
-### 5.4 Reference
-
-Provide the URL for your discussion in ChatGPT:
+Using an AI, explore the different ways that searching for negative cycles with Bellman Ford is useful.  
 

@@ -1,3 +1,11 @@
+/*  CSE 381 - Binary Search Test
+ *  (c) BYU-Idaho - It is an honor code violation to post this
+ *  file completed in a public file sharing site. S4.
+ *
+ *  Instructions: Do not modify this file.  Use these test to verify
+ *  that your code is working properly.
+*/
+
 namespace AlgorithmLibTest;
 using AlgorithmLib;
 using NUnit.Framework;
@@ -6,65 +14,63 @@ using NUnit.Framework;
 public class BinarySearchTest
 {
     [Test]
-    /* First Position Match */
-    public void Test1()
+    public void Test1_MatchFirst()
     {
-        IComparable[] array = { 1, 2, 3, 4, 5, 6 };
-        var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(data, 6);
-        Assert.That(index, Is.EqualTo(5));
-        Assert.Pass();
-    }
-    
-    [Test]
-    /* Last Position Match */
-    public void Test2()
-    {
-        IComparable[] array = { 1, 2, 3, 4, 5, 6 };
-        var data = new List<IComparable>(array);
+        var data = new List<int> { 1, 3, 6, 7, 11, 13, 15 };
         var index = BinarySearch.Search(data, 1);
         Assert.That(index, Is.EqualTo(0));
         Assert.Pass();
     }
     
     [Test]
-    /* Middle Position Match */
-    public void Test3()
+    public void Test2_MatchLast()
     {
-        IComparable[] array = { 1, 2, 3, 4, 5, 6 };
-        var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(data, 4);
+        var data = new List<int> { 1, 3, 6, 7, 11, 13, 15 };
+        var index = BinarySearch.Search(data, 15);
+        Assert.That(index, Is.EqualTo(6));
+        Assert.Pass();
+    }
+    
+    [Test]
+    public void Test3_MatchMiddle()
+    {
+        var data = new List<int> { 1, 3, 6, 7, 11, 13, 15 };
+        var index = BinarySearch.Search(data, 7);
         Assert.That(index, Is.EqualTo(3));
         Assert.Pass();
     }
     
     [Test]
-    /* Invalid Match too Big */
-    public void Test4()
+    public void Test4_NoMatchTooBig()
     {
-        IComparable[] array = { 1, 2, 3, 4, 5, 6 };
-        var data = new List<IComparable>(array);
-        var index = BinarySearch.Search(data, 10);
+        var data = new List<int> { 1, 3, 6, 7, 11, 13, 15 };
+        var index = BinarySearch.Search(data, 20);
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();
     }
     
     [Test]
-    /* Invalid Match too Small */
-    public void Test5()
+    public void Test5_NoMatchTooSmall()
     {
-        IComparable[] array = { 1, 2, 3, 4, 5, 6 };
-        var data = new List<IComparable>(array);
+        var data = new List<int> { 1, 3, 6, 7, 11, 13, 15 };
         var index = BinarySearch.Search(data, 0);
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();
     }
     
     [Test]
-    /* Empty List */
-    public void Test6()
+    public void Test6_NoMatchMiddle()
     {
-        var empty = new List<IComparable>();
+        var data = new List<int> { 1, 3, 6, 7, 11, 13, 15 };
+        var index = BinarySearch.Search(data, 4);
+        Assert.That(index, Is.EqualTo(-1));
+        Assert.Pass();
+    }
+    
+    [Test]
+    public void Test7_Empty()
+    {
+        var empty = new List<int>();
         var index = BinarySearch.Search(empty,7);
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();

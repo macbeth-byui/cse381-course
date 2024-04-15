@@ -6,3 +6,4 @@
 *.dtmp
 .vscode
 .idea
+*.beam
