@@ -20,7 +20,7 @@ NOTE: Do not copy/paste from an AI or the book.  Answer these questions in your 
 
 ## 3. Performance (10%)
 
-The performance for the shortest path (where $V$ is the number of verticies in the graph and $E$ is the number of edges):
+The performance for the shortest path (where $V$ is the number of vertices in the graph and $E$ is the number of edges):
 
 * Using an Array:
     * Worst Case: $O()$
