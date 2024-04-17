@@ -2,7 +2,7 @@
 
 (c) BYU-Idaho - It is an honor code violation to post this file completed in a public file sharing site. S4.
 
-Name: Chad Macbeth
+Name: 
 
 ## 1. Code (60%)
 
