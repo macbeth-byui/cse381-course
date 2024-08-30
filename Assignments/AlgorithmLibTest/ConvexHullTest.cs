@@ -167,7 +167,7 @@ public class ConvexHullTest
     }
 
     [Test]
-    public void Test9_TooSmallToCreateHull()
+    public void Test10_TooSmallToCreateHull()
     {
         var points = new List<ConvexHull.Point>()
         {
