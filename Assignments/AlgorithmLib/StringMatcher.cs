@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - String Matcher
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. S4.
+*  file completed in a public file sharing site. F4.
 *
 *  Instructions: Implement the Match and BuildTable functions per the instructions
 *  in the comments.  Run all tests in StringMatcherTest.cs to verify your code.

@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Priority Queue
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. S4.
+*  file completed in a public file sharing site. F4.
 *
 *  Do not modify this file.  You will use this in your code.
 */
