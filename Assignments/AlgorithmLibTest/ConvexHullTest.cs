@@ -115,6 +115,70 @@ public class ConvexHullTest
 
         Assert.Pass();
     }
-   
+    
+        public void Test8_AllCoLinear()
+    {
+        var points = new List<ConvexHull.Point>()
+        {
+            new(0, 0),
+            new(1, 1),
+            new(2, 2),
+            new(3, 3),
+            new(5, 4),
+            new(6, 6),
+        };
+        var hull = ConvexHull.GenerateHull(points);
+        
+        Assert.That(hull.Count, Is.EqualTo(0));
+
+        Assert.Pass();
+    }
+
+    [Test]
+    public void Test9_AlmostCoLinear()
+    {
+        var points = new List<ConvexHull.Point>()
+        {
+            new(0, 0),
+            new(1, 1),
+            new(2, 2),
+            new(3, 3),
+            new(5, 4),
+            new(6, 7),
+        };
+        var hull = ConvexHull.GenerateHull(points);
+        
+        var expected = new List<ConvexHull.Point>()
+        {
+            new(0, 0),
+            new(5, 4),
+            new(6, 7),
+            new(0, 0)
+        };
+        
+        Assert.That(hull.Count, Is.EqualTo(expected.Count));
+
+        for (var i = 0; i < hull.Count; i++)
+        {
+            Assert.That(hull[i].Equals(expected[i]), Is.True);
+        }
+
+        Assert.Pass();
+    }
+
+    [Test]
+    public void Test9_TooSmallToCreateHull()
+    {
+        var points = new List<ConvexHull.Point>()
+        {
+            new(0, 0),
+            new(1, 1),
+        };
+        var hull = ConvexHull.GenerateHull(points);
+        
+        Assert.That(hull.Count, Is.EqualTo(0));
+
+        Assert.Pass();
+    } 
     
 }

@@ -1,6 +1,3 @@
-# CSE 381 Workshop 10
-# Do not change the code in this file
-
 class PriorityQueue:
 
     class PqNode:
@@ -52,12 +49,14 @@ class PriorityQueue:
                 currNode = rightNode
 
 
-    def decrease_key(self, value, priority):
+    def decrease_priority(self, value, priority):
+        if value not in self._lookup:
+            return
         curr = self._lookup[value]
         self._heap[curr].priority = priority
         self.bubble_up(curr)
 
-    def insert(self, value, priority):
+    def enqueue(self, value, priority):
         newNode = PriorityQueue.PqNode(value, priority)
         self._heap.append(newNode)
         curr = len(self._heap) - 1
@@ -71,7 +70,7 @@ class PriorityQueue:
         result = self._heap[0]
         last = self._heap[len(self._heap)-1]
         self._heap[0] = last
-        self._lookup[self._heap[0]] = 0
+        self._lookup[self._heap[0].value] = 0
         self._heap.pop()
         self._lookup.pop(result.value)
         self.bubble_down(0)

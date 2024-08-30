@@ -34,7 +34,7 @@ def shortest_path_priqueue(graph, start_vertex):
 
     queue = PriorityQueue()
     for index in range(graph.size()):
-        queue.insert(index, distance[index])
+        queue.enqueue(index, distance[index])
     count = 0
 
     while queue.size() > 0:
@@ -45,7 +45,7 @@ def shortest_path_priqueue(graph, start_vertex):
             if distance[vertex] + edge.weight < distance[edge.destId]:
                 distance[edge.destId] = distance[vertex] + edge.weight
                 pred[edge.destId] = vertex;
-                queue.decrease_key(edge.destId, distance[edge.destId])
+                queue.decrease_priority(edge.destId, distance[edge.destId])
                 count += 1
 
     return (distance,pred,count)

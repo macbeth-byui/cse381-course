@@ -24,33 +24,33 @@ with open("Workshops/week9_workshop/poem.txt","r") as fd:
     # Read Unecrypted File
     pass
 
-with open("Workshops/week9_workshop/poem.enc","w") as fd:
-    # Encrypt and Write to Encrypted File
-    pass
+# with open("Workshops/week9_workshop/poem.enc","w") as fd:
+#     # Encrypt and Write to Encrypted File
+#     pass
 
-with open("Workshops/week9_workshop/poem.enc","r") as fd:
-    # Read Encrypted File
-    pass
+# with open("Workshops/week9_workshop/poem.enc","r") as fd:
+#     # Read Encrypted File
+#     pass
 
-with open("Workshops/week9_workshop/poem_decrypted.txt","w") as fd:
-    # Decrypt and Write to Unecrypted File
-    pass
+# with open("Workshops/week9_workshop/poem_decrypted.txt","w") as fd:
+#     # Decrypt and Write to Unecrypted File
+#     pass
         
 
 # Encrypting whole file into a single value
 
-with open("Workshops/week9_workshop/poem.txt","rb") as fd:
-    # Read Unecrypted File
-    pass
+# with open("Workshops/week9_workshop/poem.txt","rb") as fd:
+#     # Read Unecrypted File
+#     pass
 
-with open("Workshops/week9_workshop/poem.enc2","wb") as fd:
-    # Encrypt and Write to Encrypted File
-    pass
+# with open("Workshops/week9_workshop/poem.enc2","wb") as fd:
+#     # Encrypt and Write to Encrypted File
+#     pass
 
-with open("Workshops/week9_workshop/poem.enc2","rb") as fd:
-    # Read Encrypted File
-    pass
+# with open("Workshops/week9_workshop/poem.enc2","rb") as fd:
+#     # Read Encrypted File
+#     pass
 
-with open("Workshops/week9_workshop/poem_decrypted2.txt", "wb") as fd:
-    # Decrypt and Write to Unecrypted File
-    pass
+# with open("Workshops/week9_workshop/poem_decrypted2.txt", "wb") as fd:
+#     # Decrypt and Write to Unecrypted File
+#     pass

@@ -26,7 +26,7 @@ def build_tree(profile):
         node = Node()
         node.letter = letter
         node.count = profile[letter]
-        q.insert(node, node.count)
+        q.enqueue(node, node.count)
 
     while q.size() > 1:
         x = q.dequeue()
@@ -35,7 +35,7 @@ def build_tree(profile):
         z.count = x.count + y.count
         z.left = x
         z.right = y
-        q.insert(z, z.count)
+        q.enqueue(z, z.count)
 
     return q.dequeue()
 

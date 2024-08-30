@@ -18,6 +18,7 @@ public static class BellmanFordShortestPath
     *     startVertex - The vertex ID to calculate shortest path from
     *  Outputs:
     *     (Distance List, Predecessor List)
+    *     NOTE: The above two output lists should contain Graph.INF as needed
     *
     *  Note: If a negative cycle exists, then the function must return
     *  a tuple of two empty lists. 

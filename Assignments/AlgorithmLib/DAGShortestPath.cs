@@ -33,6 +33,7 @@ public static class DAGShortestPath
      *     startVertex - Starting vertex ID
      *  Outputs:
      *     (distance list, predecessor list) 
+     *     NOTE: The above two output lists should contain Graph.INF as needed
      */
     public static (List<int>, List<int>) ShortestPath(Graph g, int startVertex)
     {

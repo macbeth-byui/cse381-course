@@ -36,7 +36,7 @@ def shortest_path2(graph, start_vertex):
 
     queue = PriorityQueue()
     for index in range(graph.size()):
-        queue.insert(index, distance[index])
+        queue.enqueue(index, distance[index])
 
     while queue.size() > 0:
 
@@ -46,7 +46,7 @@ def shortest_path2(graph, start_vertex):
             if distance[vertex] + edge.weight < distance[edge.destId]:
                 distance[edge.destId] = distance[vertex] + edge.weight
                 pred[edge.destId] = vertex;
-                queue.decrease_key(edge.destId, distance[edge.destId])
+                queue.decrease_priority(edge.destId, distance[edge.destId])
 
     return (distance,pred)
 

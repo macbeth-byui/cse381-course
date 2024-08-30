@@ -1,6 +1,3 @@
-# CSE 381 Workshop 7
-# Do not modify this file
-
 class PriorityQueue:
 
     class PqNode:
@@ -52,13 +49,14 @@ class PriorityQueue:
                 currNode = rightNode
 
 
-    def decrease_key(self, value, priority):
-        if value in self._lookup:
-            curr = self._lookup[value]
-            self._heap[curr].priority = priority
-            self.bubble_up(curr)
+    def decrease_priority(self, value, priority):
+        if value not in self._lookup:
+            return
+        curr = self._lookup[value]
+        self._heap[curr].priority = priority
+        self.bubble_up(curr)
 
-    def insert(self, value, priority):
+    def enqueue(self, value, priority):
         newNode = PriorityQueue.PqNode(value, priority)
         self._heap.append(newNode)
         curr = len(self._heap) - 1
@@ -87,34 +85,3 @@ class PriorityQueue:
             print(f"{pair.value} (p{pair.priority}), ", end="")
         print()
 
-# heap = PriorityQueue2()
-# heap.insert("A",7);
-# heap.print_heap();
-# heap.insert("B",6);
-# heap.print_heap();
-# heap.insert("C",4);
-# heap.print_heap();
-# heap.insert("D",8);
-# heap.print_heap();
-# heap.insert("E",3);
-# heap.print_heap();
-# heap.insert("F",2);
-# heap.print_heap();
-# print("-----");
-# heap.decrease_key("D",0);
-# heap.print_heap();
-# heap.decrease_key("C",1);
-# heap.print_heap();
-# print("-----");
-# heap.dequeue();
-# heap.print_heap();
-# heap.dequeue();
-# heap.print_heap();
-# heap.dequeue();
-# heap.print_heap();
-# heap.dequeue();
-# heap.print_heap();
-# heap.dequeue();
-# heap.print_heap();
-# heap.dequeue();
-# heap.print_heap();

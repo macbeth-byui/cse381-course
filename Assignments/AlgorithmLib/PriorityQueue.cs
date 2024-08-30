@@ -100,8 +100,13 @@ public class PriorityQueue<T> where T : notnull
     }
 
     // Decrease the priority of a node and update the queue
-    public void DecreaseKey(T value, int priority)
+    public void DecreasePriority(T value, int priority)
     {
+        // Verify the value requested actually exists.
+        if (!_lookup.ContainsKey(value)) {
+            return;
+        }
+
         // Get location of value in the array 
         var curr = _lookup[value];
         // Change the priority of the value
@@ -111,7 +116,7 @@ public class PriorityQueue<T> where T : notnull
     }
 
     // Add a new value with a priority to the queue
-    public void Insert(T value, int priority)
+    public void Enqueue(T value, int priority)
     {
         // Create the new node
         var newNode = new PqNode { Priority = priority, Value = value };
