@@ -6,6 +6,8 @@
  *  that your code is working properly.
 */
 
+#pragma warning disable CS8602   // Dereference of a possibly null reference.
+
 using AlgorithmLib;
 using NUnit.Framework;
 
@@ -124,3 +126,5 @@ public class HuffmanTreeTest
 
     }
 }
+
+#pragma warning restore CS8602  // Dereference of a possibly null reference.
