@@ -1,6 +1,6 @@
 /*  CSE 381 - Binary Search Test
  *  (c) BYU-Idaho - It is an honor code violation to post this
- *  file completed in a public file sharing site. F4.
+ *  file completed in a public file sharing site. W5.
  *
  *  Instructions: Do not modify this file.  Use these test to verify
  *  that your code is working properly.

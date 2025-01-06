@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - RSA 
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. F4.
+*  file completed in a public file sharing site. W5.
 *
 *  Instructions: Implement the Euclid, ModularExponentiation, GeneratePrivateKey,
 *  Encrypt, and Decrypt functions per the instructions in the comments.  

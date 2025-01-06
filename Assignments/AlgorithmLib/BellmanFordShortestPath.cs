@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Bellman Ford
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. F4.
+*  file completed in a public file sharing site. W5.
 *
 *  Instructions: Implement the ShortestPath function per the instructions
 *  in the comments.  Run all tests in BellmanFordTest.cs to verify your code.

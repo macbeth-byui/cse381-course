@@ -1,6 +1,6 @@
 ﻿/*  CSE 381 - Quick Sort
  *  (c) BYU-Idaho - It is an honor code violation to post this
- *  file completed in a public file sharing site. F4.
+ *  file completed in a public file sharing site. W5.
  *
  *  Instructions: Implement the Partition and _Sort functions per the instructions
  *  in the comments.  Run all tests in QuickSortTest.cs to verify your code.

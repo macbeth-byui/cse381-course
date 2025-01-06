@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Binary Search
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. F4.
+*  file completed in a public file sharing site. W5.
 *
 *  Instructions: Implement the _Search function per the instructions
 *  in the comments.  Run all tests in BinarySearchTest.cs to verify your code.
