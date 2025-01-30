@@ -42,7 +42,7 @@ g.add_directed_edge(4, 5, -2);
 print(distance)
 print(pred)
 print()
-(distance, pred) = dag_shortest_path(g,0)
+(distance, pred) = dag_shortest_path(g,2)
 print(distance)
 print(pred)
 
