@@ -58,4 +58,22 @@ public class BetterLinearSearchTest
         Assert.That(index, Is.EqualTo(-1));
         Assert.Pass();
     }
+
+    [Test]
+    public void Test6_MatchFirst()
+    {
+        var list = new List<int> { 1, 2, 3, 4, 5, 6 };
+        var index = BetterLinearSearch.Search(list, 1);
+        Assert.That(index, Is.EqualTo(0));
+        Assert.Pass();
+    }
+
+    [Test]
+    public void Test7_MatchLast()
+    {
+        var list = new List<int> { 1, 2, 3, 4, 5, 6 };
+        var index = BetterLinearSearch.Search(list, 6);
+        Assert.That(index, Is.EqualTo(5));
+        Assert.Pass();
+    }
 }
