@@ -62,17 +62,17 @@ public static class Program
 
         var data4 = new List<int>() {
             3, 5, 2, 6, 1, 4};
-        SelectionSort.Sort(data4);
+        InsertionSort.Sort(data4);
         Console.WriteLine(String.Join(", ", data4));
 
         var data5 = new List<int>() {
             1, 2, 3, 4, 5, 6};
-        SelectionSort.Sort(data5);
+        InsertionSort.Sort(data5);
         Console.WriteLine(String.Join(", ", data5));
 
         var data6 = new List<String>() {
             "cow", "dog", "pig", "cat", "deer"};
-        SelectionSort.Sort(data6);
+        InsertionSort.Sort(data6);
         Console.WriteLine(String.Join(", ", data6));
     }
 }
