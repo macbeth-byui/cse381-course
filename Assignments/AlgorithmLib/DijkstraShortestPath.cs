@@ -12,8 +12,9 @@ public static class DijkstraShortestPath
 {
 
     /* Find the shortest path from a starting vertex to all
-     * vertices in a graph using Dijkstra.  Use a Priority Queue
-     * (code already provided for you) in your implementation.
+     * vertices in a graph using Dijkstra.  Use a GraphHeap object
+     * (code already provided for you) in your implementation for the 
+     * priority queue.
      *
      *  Inputs:
      *     g - Graph

@@ -8,18 +8,18 @@
 namespace AlgorithmLib;
 
 
-public class PriorityQueue<T> where T : notnull
+public class GraphHeap<T> where T : notnull
 {
     // Each node in the priority queue contains a value
     // and a priority (number)
-    private class PqNode
+    private class Node
     {
         public T Value { get; init; } = default!;
         public int Priority { get; set; }
     }
     
     // Will represent the priority queue as an array/list
-    private readonly List<PqNode> _heap = new();
+    private readonly List<Node> _heap = new();
     
     // Quick lookup to find a node based on the value 
     private readonly Dictionary<T,int> _lookup = new(); 
@@ -106,7 +106,6 @@ public class PriorityQueue<T> where T : notnull
         if (!_lookup.ContainsKey(value)) {
             return;
         }
-
         // Get location of value in the array 
         var curr = _lookup[value];
         // Change the priority of the value
@@ -119,7 +118,7 @@ public class PriorityQueue<T> where T : notnull
     public void Enqueue(T value, int priority)
     {
         // Create the new node
-        var newNode = new PqNode { Priority = priority, Value = value };
+        var newNode = new Node { Priority = priority, Value = value };
         // Add it to the end of the array
         _heap.Add(newNode);
         // Add link in the lookup map
