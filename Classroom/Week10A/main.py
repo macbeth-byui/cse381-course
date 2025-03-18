@@ -1,7 +1,7 @@
 # CSE 381 REPL 10A 
 # Huffman Trees
 
-from queue import PriorityQueue
+from queue import PQueue
 
 class Node:
 

@@ -39,9 +39,9 @@ public static class HuffmanTree
         return new Dictionary<char, int>();
     }
     
-    /* Create a huffman tree for all letters in the profile.  Use
-     * either the GraphHeap (code already provided) in your implementation
-     * or use the PriorityQueue provided in the C# library.
+    /* Create a huffman tree for all letters in the profile.  Use a PQueue object
+     * (code already provided for you) in your implementation for the 
+     * priority queue.
      *
      *  Inputs:
      *     profile - Previously generated profile dictionary

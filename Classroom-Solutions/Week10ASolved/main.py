@@ -1,7 +1,7 @@
 # CSE 381 REPL 10A Solution
 # Huffman Trees
 
-from queue import PriorityQueue
+from queue import PQueue
 
 class Node:
 
@@ -30,7 +30,7 @@ def profile(text):
     return profile
 
 def build_tree(profile):
-    q = PriorityQueue()
+    q = PQueue()
     for letter in profile.keys():
         node = Node()
         node.letter = letter

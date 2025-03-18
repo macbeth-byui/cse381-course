@@ -3,7 +3,7 @@
 
 from graph import Graph
 from graph import INF
-from queue import PriorityQueue
+from queue import PQueue
 
 def shortest_path(graph, start_vertex):
     distance = [INF] * graph.size()

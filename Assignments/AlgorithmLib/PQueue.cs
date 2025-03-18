@@ -8,7 +8,7 @@
 namespace AlgorithmLib;
 
 
-public class GraphHeap<T> where T : notnull
+public class PQueue<T> where T : notnull
 {
     // Each node in the priority queue contains a value
     // and a priority (number)

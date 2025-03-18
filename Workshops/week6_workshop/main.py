@@ -6,7 +6,7 @@
 
 from graph import Graph
 from graph import INF
-from queue import PriorityQueue
+from queue import PQueue
 import time
 
 CONVERSION_UNITS_TO_MILES = 65  # Approximation with units Miles / Drawing Units
@@ -34,7 +34,7 @@ def shortest_path2(graph, start_vertex):
     pred = [INF] * graph.size()
     distance[start_vertex] = 0
 
-    queue = PriorityQueue()
+    queue = PQueue()
     for index in range(graph.size()):
         queue.enqueue(index, distance[index])
 
