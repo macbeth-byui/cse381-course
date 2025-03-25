@@ -116,7 +116,8 @@ public class ConvexHullTest
         Assert.Pass();
     }
     
-        public void Test8_AllCoLinear()
+   [Test]
+    public void Test8_AllCoLinear()
     {
         var points = new List<ConvexHull.Point>()
         {
@@ -124,7 +125,7 @@ public class ConvexHullTest
             new(1, 1),
             new(2, 2),
             new(3, 3),
-            new(5, 4),
+            new(4, 4),
             new(6, 6),
         };
         var hull = ConvexHull.GenerateHull(points);
