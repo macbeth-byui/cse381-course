@@ -1,4 +1,4 @@
-class PriorityQueue:
+class PQueue:
 
     class PqNode:
 
@@ -57,7 +57,7 @@ class PriorityQueue:
         self.bubble_up(curr)
 
     def enqueue(self, value, priority):
-        newNode = PriorityQueue.PqNode(value, priority)
+        newNode = PQueue.PqNode(value, priority)
         self._heap.append(newNode)
         curr = len(self._heap) - 1
         self._lookup[value] = curr;

@@ -3,7 +3,7 @@
 
 from graph import Graph
 from graph import INF
-from queue import PriorityQueue
+from queue import PQueue
 import time
 import random
 
@@ -32,7 +32,7 @@ def shortest_path_priqueue(graph, start_vertex):
     pred = [INF] * graph.size()
     distance[start_vertex] = 0
 
-    queue = PriorityQueue()
+    queue = PQueue()
     for index in range(graph.size()):
         queue.enqueue(index, distance[index])
     count = 0
