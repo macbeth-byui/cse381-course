@@ -37,9 +37,9 @@ public class ConvexHullTest
     [Test]
     public void Test3_ColinearOrientation()
     {
-        var a = new ConvexHull.Point(0, 0);
-        var b = new ConvexHull.Point(1, 1);
-        var c = new ConvexHull.Point(8, 8);
+        var a = new ConvexHull.Point(2, 1);
+        var b = new ConvexHull.Point(4, 2);
+        var c = new ConvexHull.Point(6, 3);
         var result = ConvexHull.Orientation(a, b, c);
         Assert.That(result, Is.EqualTo(ConvexHull.Angle.Colinear));
     }
