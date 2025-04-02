@@ -27,6 +27,9 @@ public static class Stats
 
     public static T Max<T>(List<T> values) where T : IComparable
     {
+        if (values.Count == 0) {
+            throw new Exception("List is empty");
+        }
         var maxValue = values[0];
         for (var i=1; i<values.Count; i++)
         {
@@ -44,7 +47,7 @@ public static class Stats
         {
             return 0;
         }
-        return values.ToArray()[indexStart..].Sum();
+        return values[indexStart..].Sum();
     }
 }
 
@@ -54,7 +57,7 @@ public static class Program
     {
         Console.WriteLine ("Hello World");
         int x = 5;
-        var y = 6;
+        var y = 6.5;
 
         Console.WriteLine($"x = {x} y = {y} x+y = {x+y}");
 
@@ -78,43 +81,48 @@ public static class Program
         Console.WriteLine($"First: {list[0]}");
         Console.WriteLine($"Last: {list[^1]}");
 
-        var list2 = Enumerable.Range(0,10).ToList();
-        list2 = list2.Select(x => 2*x).ToList();
-        list2 = list2.Select(_ => 42).ToList();
+        var list2 = Enumerable.Range(0,10); 
+        list2 = list2.Select(x => 2*x);
+        list2 = list2.Select(_ => 42);
 
         foreach (var i in list2) {
             Console.WriteLine(i);
         }
+
+        var list3 = list2.ToList();
+        Console.WriteLine($"First: {list3[0]}");
 
         var r = new Rectangle(3,5);
         Console.WriteLine($"Area = {r.Area()}");
         r.Height = 10;
         Console.WriteLine($"Area = {r.Area()}");
 
-        var list3 = new List<int> {3, 1, 6, 5, 4, 0};
-        var avg3 = Stats.Average(list3);
-        Console.WriteLine($"Avg: {avg3}");
+        var list4 = new List<int> {3, 1, 6, 5, 4, 0};
+        var avg4 = Stats.Average(list4);
+        Console.WriteLine($"Avg: {avg4}");
         
-        var max3 = Stats.Max(list3);
-        Console.WriteLine($"Max: {max3}");
-        
-        var list4 = new List<String> {"dog", "cat", "pig", "cow", "hamster", "bird"};
         var max4 = Stats.Max(list4);
         Console.WriteLine($"Max: {max4}");
+        
+        var list5 = new List<String> {"dog", "cat", "pig", "cow", "hamster", "bird"};
+        var max5 = Stats.Max(list5);
+        Console.WriteLine($"Max: {max5}");
 
-        var firstHalf = list4.ToArray()[..3];
-        var secondHalf = list4.ToArray()[3..];
-        Console.WriteLine(string.Join(", ", firstHalf.ToList()));
-        Console.WriteLine(string.Join(", ", secondHalf.ToList()));
+        var firstHalf = list5[..3];
+        var secondHalf = list5[3..];
+        Console.WriteLine(string.Join(", ", firstHalf));
+        Console.WriteLine(string.Join(", ", secondHalf));
+
+        var result = Stats.Add(list4,3);
+        Console.WriteLine(result);
+
+        result = Stats.Add(list4);
+        Console.WriteLine(result);
 
         List<int>? list6 = null;
-        var result = Stats.Add(list6);
+        result = Stats.Add(list6);
         Console.WriteLine(result);
         
-        result = Stats.Add(list3);
-        Console.WriteLine(result);
-        result = Stats.Add(list3,3);
-        Console.WriteLine(result);
 
         var accounts = new Dictionary<string, int>() {
             {"bob",332},

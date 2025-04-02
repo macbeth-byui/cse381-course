@@ -25,6 +25,8 @@ public static class Program
         //     Console.WriteLine(i);
         // }
 
+        // Console.WriteLine($"First: {list2[0]}");
+
 
         // Console.WriteLine($"Area = {r.Area()}");
 
@@ -32,17 +34,17 @@ public static class Program
         // Console.WriteLine($"Area = {r.Area()}");
 
 
-        // Console.WriteLine($"Avg: {avg}");
+        // Console.WriteLine($"Avg: {avg4}");
 
         
-         // Console.WriteLine($"Max: {max}");
+         // Console.WriteLine($"Max: {max4}");
 
         
-        // Console.WriteLine($"Max: {max}");
+        // Console.WriteLine($"Max: {max5}");
 
 
-        // Console.WriteLine(string.Join(", ", firstHalf.ToList()));
-        // Console.WriteLine(string.Join(", ", secondHalf.ToList()));
+        // Console.WriteLine(string.Join(", ", firstHalf));
+        // Console.WriteLine(string.Join(", ", secondHalf));
 
         
         // Console.WriteLine(result);

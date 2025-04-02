@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Merge Sort
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. W5.
+*  file completed in a public file sharing site. S5.
 *
 *  Instructions: Implement the Merge and _Sort functions per the instructions
 *  in the comments.  Run all tests in MergeSortTest.cs to verify your code.

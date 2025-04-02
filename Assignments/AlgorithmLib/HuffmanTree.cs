@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Huffman Tree
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. W5.
+*  file completed in a public file sharing site. S5.
 *
 *  Instructions: Implement the Profile, BuildTree, _CreateEncodingMap,
 *  Encode, and Decode function per the instructions in the comments.  
