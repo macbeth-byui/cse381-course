@@ -63,22 +63,7 @@ public class ConvexHullTest
     }
     
     [Test]
-    public void Test6_TooFewPoints()
-    {
-        var points = new List<ConvexHull.Point>()
-        {
-            new(0, 0),
-            new(4, 0),
-        };
-        var hull = ConvexHull.GenerateHull(points);
-        
-        Assert.That(hull.Count, Is.EqualTo(0));
-
-        Assert.Pass();
-    }
-    
-    [Test]
-    public void Test7_CreateHull()
+    public void Test6_CreateHull()
     {
         var points = new List<ConvexHull.Point>()
         {
@@ -115,18 +100,17 @@ public class ConvexHullTest
 
         Assert.Pass();
     }
-    
-   [Test]
-    public void Test8_AllCoLinear()
+
+    [Test]
+    public void Test7_CreateHullAllCoLinear()
     {
         var points = new List<ConvexHull.Point>()
         {
-            new(0, 0),
-            new(1, 1),
-            new(2, 2),
-            new(3, 3),
-            new(4, 4),
-            new(6, 6),
+            new(2, 1),
+            new(4, 2),
+            new(6, 3),
+            new(8, 4),
+            new(10, 5),
         };
         var hull = ConvexHull.GenerateHull(points);
         
@@ -136,25 +120,24 @@ public class ConvexHullTest
     }
 
     [Test]
-    public void Test9_AlmostCoLinear()
+    public void Test8_CreateHullAlmostCoLinear()
     {
         var points = new List<ConvexHull.Point>()
         {
-            new(0, 0),
-            new(1, 1),
-            new(2, 2),
-            new(3, 3),
-            new(5, 4),
-            new(6, 7),
+            new(2, 1),
+            new(4, 2),
+            new(6, 3),
+            new(8, 4),
+            new(10, 6),
         };
         var hull = ConvexHull.GenerateHull(points);
         
         var expected = new List<ConvexHull.Point>()
         {
-            new(0, 0),
-            new(5, 4),
-            new(6, 7),
-            new(0, 0)
+            new(2, 1),
+            new(8, 4),
+            new(10, 6),
+            new(2, 1)
         };
         
         Assert.That(hull.Count, Is.EqualTo(expected.Count));
@@ -168,7 +151,7 @@ public class ConvexHullTest
     }
 
     [Test]
-    public void Test10_TooSmallToCreateHull()
+    public void Test9_CreateHullTooSmall()
     {
         var points = new List<ConvexHull.Point>()
         {
@@ -180,6 +163,7 @@ public class ConvexHullTest
         Assert.That(hull.Count, Is.EqualTo(0));
 
         Assert.Pass();
-    } 
+    }    
+
     
 }
