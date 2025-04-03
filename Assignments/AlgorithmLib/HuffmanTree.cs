@@ -31,12 +31,13 @@ public static class HuffmanTree
      *  Inputs:
      *     text - Source for the profile
      *  Outputs:
-     *     Dictionary where key is a character and value is the frequency count
-     *     from the text.
+     *     List of (letter,count) pairs that represent the profile
+     *     of the text.  This list must be sorted by letter to ensure
+     *     consistent huffman tree creation.
      */
-    public static Dictionary<char,int> Profile(String text)
+    public static List<(char,int)> Profile(String text)
     {
-        return new Dictionary<char, int>();
+        return new List<char, int>();
     }
     
     /* Create a huffman tree for all letters in the profile.  Use a PQueue object
@@ -44,11 +45,11 @@ public static class HuffmanTree
      * priority queue.
      *
      *  Inputs:
-     *     profile - Previously generated profile dictionary
+     *     profile - Previously generated profile list of (letter,count) pairs
      *  Outputs:
      *     The root node of a huffman tree
      */
-    public static Node BuildTree(Dictionary<char, int> profile)
+    public static Node BuildTree(List<(char, int)> profile)
     {
         return new Node();
     }

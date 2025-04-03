@@ -5,7 +5,6 @@
  *  Instructions: Do not modify this file.  Use these test to verify
  *  that your code is working properly.
 */
-
 #pragma warning disable CS8602   // Dereference of a possibly null reference.
 
 using AlgorithmLib;
@@ -22,20 +21,22 @@ public class HuffmanTreeTest
     {
         var text = "the rain in spain stays mainly in the plain";
         var profile = HuffmanTree.Profile(text);
-        Assert.That(profile['t'], Is.EqualTo(3));
-        Assert.That(profile['h'], Is.EqualTo(2));
-        Assert.That(profile['e'], Is.EqualTo(2));
-        Assert.That(profile[' '], Is.EqualTo(8));
-        Assert.That(profile['r'], Is.EqualTo(1));
-        Assert.That(profile['a'], Is.EqualTo(5));
-        Assert.That(profile['i'], Is.EqualTo(6));
-        Assert.That(profile['n'], Is.EqualTo(6));
-        Assert.That(profile['s'], Is.EqualTo(3));
-        Assert.That(profile['p'], Is.EqualTo(2));
-        Assert.That(profile['y'], Is.EqualTo(2));
-        Assert.That(profile['m'], Is.EqualTo(1));
-        Assert.That(profile['l'], Is.EqualTo(2));
-        Assert.That(profile.Count, Is.EqualTo(13));
+        var expected = new List<(char,int)> {
+            (' ', 8),
+            ('a', 5),
+            ('e', 2),
+            ('h', 2),
+            ('i', 6),
+            ('l', 2),
+            ('m', 1),
+            ('n', 6),
+            ('p', 2),
+            ('r', 1),
+            ('s', 3),
+            ('t', 3),
+            ('y', 2)
+        };
+        Assert.That(profile, Is.EqualTo(expected));
         Assert.Pass();
     }
     
@@ -80,19 +81,19 @@ public class HuffmanTreeTest
         var profile = HuffmanTree.Profile(text);
         var tree = HuffmanTree.BuildTree(profile);
         var map = HuffmanTree.CreateEncodingMap(tree);
-        Assert.That(map['l'], Is.EqualTo("0000"));
-        Assert.That(map['e'], Is.EqualTo("0001"));
-        Assert.That(map['h'], Is.EqualTo("0010"));
-        Assert.That(map['r'], Is.EqualTo("00110"));
-        Assert.That(map['m'], Is.EqualTo("00111"));
+        Assert.That(map['l'], Is.EqualTo("11101"));
+        Assert.That(map['e'], Is.EqualTo("11111"));
+        Assert.That(map['h'], Is.EqualTo("11110"));
+        Assert.That(map['r'], Is.EqualTo("01011"));
+        Assert.That(map['m'], Is.EqualTo("01010"));
         Assert.That(map['p'], Is.EqualTo("0100"));
-        Assert.That(map['y'], Is.EqualTo("0101"));
+        Assert.That(map['y'], Is.EqualTo("11100"));
         Assert.That(map['a'], Is.EqualTo("011"));
-        Assert.That(map['s'], Is.EqualTo("1000"));
-        Assert.That(map['t'], Is.EqualTo("1001"));
+        Assert.That(map['s'], Is.EqualTo("1001"));
+        Assert.That(map['t'], Is.EqualTo("1000"));
         Assert.That(map['n'], Is.EqualTo("101"));
         Assert.That(map['i'], Is.EqualTo("110"));
-        Assert.That(map[' '], Is.EqualTo("111"));
+        Assert.That(map[' '], Is.EqualTo("00"));
         Assert.That(map.Count, Is.EqualTo(13));
         Assert.Pass();
 
@@ -106,7 +107,7 @@ public class HuffmanTreeTest
         var tree = HuffmanTree.BuildTree(profile);
         var map = HuffmanTree.CreateEncodingMap(tree);
         var encoded = HuffmanTree.Encode(text, map);
-        Assert.That(encoded, Is.EqualTo("10010010000111100110011110101111110101111100001000111101011111000100101101011000111001110111101010000010111111010111110010010000111101000000011110101"));
+        Assert.That(encoded, Is.EqualTo("10001111011111000101101111010100110101001001010001111010100100110000111110010010001010011110101111011110000110101001000111101111100010011101011110101"));
         Assert.Pass();
 
     }
@@ -119,7 +120,6 @@ public class HuffmanTreeTest
         var tree = HuffmanTree.BuildTree(profile);
         var map = HuffmanTree.CreateEncodingMap(tree);
         var encoded = HuffmanTree.Encode(text, map);
-        Assert.That(encoded, Is.EqualTo("10010010000111100110011110101111110101111100001000111101011111000100101101011000111001110111101010000010111111010111110010010000111101000000011110101"));
         var decoded = HuffmanTree.Decode(encoded, tree);
         Assert.That(decoded, Is.EqualTo("the rain in spain stays mainly in the plain"));
         Assert.Pass();

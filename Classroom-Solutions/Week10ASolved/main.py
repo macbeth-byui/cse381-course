@@ -27,15 +27,15 @@ def profile(text):
             profile[letter] += 1
         else:
             profile[letter] = 1
-    return profile
+    return sorted([(letter, profile[letter]) for letter in profile.keys()])
 
 def build_tree(profile):
     q = PQueue()
-    for letter in profile.keys():
+    for letter, count in profile:
         node = Node()
         node.letter = letter
-        node.count = profile[letter]
-        q.enqueue(node, node.count)
+        node.count = count
+        q.enqueue(node, count)
 
     while q.size() > 1:
         x = q.dequeue()
