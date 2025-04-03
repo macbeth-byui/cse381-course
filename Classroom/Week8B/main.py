@@ -1,21 +1,21 @@
 # CSE 381 REPL 8B
 # String Matcher
 
-def build_table(pattern, inputs):
+def build_fsm(pattern, inputs):
     pass
     
-def match(text, pattern, inputs):
-    table = build_table(pattern, inputs)
+def match_pattern(text, pattern, inputs):
+    table = build_fsm(pattern, inputs)
     
 
-results = match("ABCBCABCBCBC", "CBC", ["A","B","C"])
+results = match_pattern("ABCBCABCBCBC", "CBC", ["A","B","C"])
 print(results) # [4,9,11]
 
-results = match("GTAACAGTAAACG", "AAC", ["A","C","G","T"])
+results = match_pattern("GTAACAGTAAACG", "AAC", ["A","C","G","T"])
 print(results) # [4,11]
 
-results = match("GTAACTAACTAGTAAACAAACTG","AACT",["A","C","G","T"])
+results = match_pattern("GTAACTAACTAGTAAACAAACTG","AACT",["A","C","G","T"])
 print(results) # [5,9,21]
 
-results = match("GTAACAGTAAACG","AACT",["A","C","G","T"])
+results = match_pattern("GTAACAGTAAACG","AACT",["A","C","G","T"])
 print(results) # []
