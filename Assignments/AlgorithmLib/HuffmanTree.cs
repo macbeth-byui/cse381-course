@@ -37,7 +37,7 @@ public static class HuffmanTree
      */
     public static List<(char,int)> Profile(String text)
     {
-        return new List<char, int>();
+        return new List<(char, int)>();
     }
     
     /* Create a huffman tree for all letters in the profile.  Use a PQueue object
