@@ -57,12 +57,12 @@ public static class HuffmanTree
     /* Create an encoding map from the huffman tree
      *
      *  Inputs:
-     *     root - Root node of the Huffman Tree
+     *     tree - Root node of the Huffman Tree
      *  Outputs:
      *     A dictionary where key is the letter and value is the
      *     huffman code.
      */
-    public static Dictionary<char, string> CreateEncodingMap(Node root)
+    public static Dictionary<char, string> CreateEncodingMap(Node tree)
     {
         return new Dictionary<char, string>();
     }
@@ -70,11 +70,14 @@ public static class HuffmanTree
     /* Recursively visit each node in the Huffman Tree
      * looking for leaf nodes which contain letters.  Keep
      * track of the huffman code by adding 0 when going left
-     * and 1 when going right
+     * and 1 when going right.  If the tree has only one node
+     * (which can be determined by node being a leaf but the
+     * bit string is currently empty), then the one letter in 
+     * the tree should be encoded as "1".
      *
      *  Inputs:
      *     node - Current node we are on
-     *     code - Current code created
+     *     code - Current bit string code created
      *     map - Encoding Map being populated
      *  Outputs:
      *     none
@@ -101,7 +104,7 @@ public static class HuffmanTree
      *
      *  Inputs:
      *     text - String to decode
-     *     root - Root node of the previously created huffman tree
+     *     tree - Root node of the previously created huffman tree
      *  Outputs:
      *     decoded text
      */
