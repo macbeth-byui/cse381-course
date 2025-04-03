@@ -1,6 +1,6 @@
-﻿/*  CSE 381 - String Matcher (KMP) Test
+﻿/*  CSE 381 - String Matcher Test
  *  (c) BYU-Idaho - It is an honor code violation to post this
- *  file completed in a public file sharing site. 
+ *  file completed in a public file sharing site.
  *
  *  Instructions: Do not modify this file.  Use these test to verify
  *  that your code is working properly.
@@ -15,9 +15,9 @@ namespace AlgorithmLibTest;
 public class StringMatcherTest
 {
     [Test]
-    public void Test1_BuildTable1()
+    public void Test1_BuildFSM1()
     {
-        var results = StringMatcher.BuildTable("AAC", new List<char> { 'A', 'C', 'G', 'T' });
+        var results = StringMatcher.BuildFSM("AAC", new List<char> { 'A', 'C', 'G', 'T' });
         Assert.That(results[0]['A'],Is.EqualTo(1));
         Assert.That(results[0]['C'],Is.EqualTo(0));
         Assert.That(results[0]['G'],Is.EqualTo(0));
@@ -39,9 +39,9 @@ public class StringMatcherTest
     }
     
     [Test]
-    public void Test2_BuildTable2()
+    public void Test2_BuildFSM2()
     {
-        var results = StringMatcher.BuildTable("CBCBA", new List<char> { 'A', 'B', 'C'});
+        var results = StringMatcher.BuildFSM("CBCBA", new List<char> { 'A', 'B', 'C'});
         Assert.That(results[0]['A'],Is.EqualTo(0));
         Assert.That(results[0]['B'],Is.EqualTo(0));
         Assert.That(results[0]['C'],Is.EqualTo(1));
@@ -68,7 +68,7 @@ public class StringMatcherTest
     [Test]
     public void Test3_Match1()
     {
-        var results = StringMatcher.Match("GTAACAGTAAACG", "AAC", new List<char> { 'A', 'C', 'G', 'T' });
+        var results = StringMatcher.MatchPattern("GTAACAGTAAACG", "AAC", new List<char> { 'A', 'C', 'G', 'T' });
         var expected = new List<int> { 4, 11 };
         Assert.That(expected.SequenceEqual(results), Is.True);
         Assert.Pass();
@@ -77,7 +77,7 @@ public class StringMatcherTest
     [Test]
     public void Test4_Match2()
     {
-        var results = StringMatcher.Match("GTAACAGTAAACG", "AA", new List<char> { 'A', 'C', 'G', 'T' });
+        var results = StringMatcher.MatchPattern("GTAACAGTAAACG", "AA", new List<char> { 'A', 'C', 'G', 'T' });
         var expected = new List<int> { 3, 9, 10 };
         Assert.That(expected.SequenceEqual(results), Is.True);
         Assert.Pass();
@@ -86,7 +86,7 @@ public class StringMatcherTest
     [Test]
     public void Test5_Match3()
     {
-        var results = StringMatcher.Match("ABCBCABCBCBC", "CBC", new List<char> { 'A', 'B', 'C'});
+        var results = StringMatcher.MatchPattern("ABCBCABCBCBC", "CBC", new List<char> { 'A', 'B', 'C'});
         var expected = new List<int> { 4, 9, 11};
         Assert.That(expected.SequenceEqual(results), Is.True);
         Assert.Pass();
@@ -95,7 +95,7 @@ public class StringMatcherTest
     [Test]
     public void Test6_NoMatches()
     {
-        var results = StringMatcher.Match("GTAACAGTAAACG", "AACT", new List<char> { 'A', 'C', 'G', 'T' });
+        var results = StringMatcher.MatchPattern("GTAACAGTAAACG", "AACT", new List<char> { 'A', 'C', 'G', 'T' });
         var expected = new List<int>();
         Assert.That(expected.SequenceEqual(results), Is.True);
         Assert.Pass();

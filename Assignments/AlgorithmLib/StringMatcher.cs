@@ -12,16 +12,16 @@ public static class StringMatcher
 {
     /* Find all matches of the pattern in the string of text given a list
      * of all valid input characters.  This function needs to build Finite
-     * State Machine table by calling BuildTable.
+     * State Machine table by calling BuildFSM.
      *
      *  Inputs:
      *     text - string to search for pattern
-     *     pattern - string to search
+     *     pattern - substring to search in the text
      *     inputs - valid characters using in the text and pattern
      *  Outputs:
      *     list of indices where the pattern matched (last char of pattern match)
      */
-    public static List<int> Match(string text,  string pattern, List<char> inputs)
+    public static List<int> MatchPattern(string text,  string pattern, List<char> inputs)
     {
         return new List<int>();
     }
@@ -38,7 +38,7 @@ public static class StringMatcher
      *     dictionary shows the next state to goto for each of the valid
      *     inputs that can occur.
      */
-    public static List<Dictionary<char, int>> BuildTable(string pattern, List<char> inputs)
+    public static List<Dictionary<char, int>> BuildFSM(string pattern, List<char> inputs)
     {
         return new List<Dictionary<char, int>>();
     }
