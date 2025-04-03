@@ -29,8 +29,8 @@ public static class QuickSort
      *
      *  Inputs:
      *     data - list of values
-     *     first - the start of the sublist
-     *     last - the end of the sublist
+     *     first - the starting index of the sublist
+     *     last - the ending index of the sublist
      *  Outputs:
      *     None
      */
@@ -46,8 +46,8 @@ public static class QuickSort
      *
      *  Inputs:
      *     data - list of values
-     *     first - the start of the sublist
-     *     last - the end of the sublist
+     *     first - the starting index of the sublist
+     *     last - the ending index of the sublist
      *  Outputs:
      *     The index of where the pivot was moved
      */
