@@ -1,6 +1,6 @@
 ﻿/*  CSE 381 - RSA Test
  *  (c) BYU-Idaho - It is an honor code violation to post this
- *  file completed in a public file sharing site. 
+ *  file completed in a public file sharing site.
  *
  *  Instructions: Do not modify this file.  Use these test to verify
  *  that your code is working properly.
@@ -56,9 +56,19 @@ public class RSATest
         Assert.That(i, Is.EqualTo(BigInteger.Parse("-691197798001282429727")));
         Assert.That(j, Is.EqualTo(BigInteger.Parse("22775")));
     }
+
+    [Test]
+    public void Test4_ModExpo()
+    {
+        BigInteger a = 3;
+        BigInteger b = 50;
+        BigInteger c = 5;
+        var result = RSA.ModularExponentiation(a, b, c);
+        Assert.That(result, Is.EqualTo(BigInteger.Parse("4")));
+    }
     
     [Test]
-    public void Test4_GeneratePrivateKey()
+    public void Test5_GeneratePrivateKey()
     {
         BigInteger p = 87178291199;
         BigInteger q = 22815088913;

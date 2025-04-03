@@ -43,7 +43,7 @@ public class RSA
 
     /* Generate the RSA private key given the two prime numbers p and q and
      * the public key e which was selected to be co-prime with
-     * r = (p-1) * (q-1).
+     * phi = (p-1) * (q-1).
      * 
      *  Inputs:
      *     p - First prime
@@ -61,8 +61,8 @@ public class RSA
      *
      *  Inputs:
      *     value - Value to encrypt
-     *     e - Value that was co-prime with (p-1)*(q-1)
-     *     n - Value equal to p*q
+     *     e - Public Key whose value was co-prime with phi
+     *     n - Public Key whose Value is equal to p*q
      *  Outputs:
      *     encrypted value
      */
@@ -75,8 +75,8 @@ public class RSA
      *
      *  Inputs:
      *     value - Value to decrypt
-     *     e - Private Key
-     *     n - Value equal to p*q
+     *     d - Private Key whose value was the multiplicative inverse of e mod phi
+     *     n - Public Key whose Value is equal to p*q
      *  Outputs:
      *     encrypted value
      */
