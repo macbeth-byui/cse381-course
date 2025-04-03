@@ -28,8 +28,8 @@ public static class MergeSort
      * 
      *  Inputs:
      *     data - list of values
-     *     first - the start of the sublist
-     *     last - the end of the sublist
+     *     first - the starting index of the sublist
+     *     last - the ending index of the sublist
      *  Outputs:
      *     None
      */
@@ -42,9 +42,9 @@ public static class MergeSort
      *
      *  Inputs:
      *     data - list of values
-     *     first - the start of the first sorted sublist
-     *     mid - the end of the first sorted sublist (second sublist starts after)
-     *     last - the end of the second sorted sublist
+     *     first - the starting index of the first sorted sublist
+     *     mid - the ending index of the first sorted sublist (second sublist starts after)
+     *     last - the ending index of the second sorted sublist
      *  Outputs:
      *     None
      */
