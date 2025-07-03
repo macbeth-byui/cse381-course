@@ -13,11 +13,12 @@ def shortest_path(graph, start_vertex):
     for _ in range(graph.size()-1):  
         changesMade = False
         for vertex in range(0,graph.size()):
-            for edge in graph.edges(vertex):
-                if distance[vertex] + edge.weight < distance[edge.destId]:
-                    changesMade = True
-                    distance[edge.destId] = distance[vertex] + edge.weight
-                    pred[edge.destId] = vertex
+            if distance[vertex] != INF:
+                for edge in graph.edges(vertex):
+                    if distance[vertex] + edge.weight < distance[edge.destId]:
+                        changesMade = True
+                        distance[edge.destId] = distance[vertex] + edge.weight
+                        pred[edge.destId] = vertex
         if not changesMade:
             return (distance, pred)
     return (distance,pred)

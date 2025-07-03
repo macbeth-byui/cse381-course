@@ -17,12 +17,12 @@ def shortest_path(graph, start_vertex):
     while queue.size() > 0:
 
         vertex = queue.dequeue()
-        
-        for edge in graph.edges(vertex):
-            if distance[vertex] + edge.weight < distance[edge.destId]:
-                distance[edge.destId] = distance[vertex] + edge.weight
-                pred[edge.destId] = vertex;
-                queue.decrease_priority(edge.destId, distance[edge.destId])
+        if distance[vertex] != INF:
+            for edge in graph.edges(vertex):
+                if distance[vertex] + edge.weight < distance[edge.destId]:
+                    distance[edge.destId] = distance[vertex] + edge.weight
+                    pred[edge.destId] = vertex;
+                    queue.decrease_priority(edge.destId, distance[edge.destId])
 
     return (distance,pred)    
 
