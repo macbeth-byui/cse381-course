@@ -19,7 +19,7 @@ def shortest_path(graph, start_vertex):
                     pred[edge.destId] = node
         if not changesMade:
             print(f"Exiting at i={i}")
-            break
+            return (distance,pred)
     return (distance,pred)
 
 

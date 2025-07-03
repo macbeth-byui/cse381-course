@@ -10,7 +10,7 @@ def shortest_path(graph, start_vertex):
     pred = [INF] * graph.size()
     distance[start_vertex] = 0
 
-    for i in range(graph.size()-1):  
+    for _ in range(graph.size()-1):  
         changesMade = False
         for vertex in range(0,graph.size()):
             for edge in graph.edges(vertex):
@@ -19,7 +19,7 @@ def shortest_path(graph, start_vertex):
                     distance[edge.destId] = distance[vertex] + edge.weight
                     pred[edge.destId] = vertex
         if not changesMade:
-            break
+            return (distance, pred)
     return (distance,pred)
 
 def find_negative_weight_cycle(graph, pred, vertex):
