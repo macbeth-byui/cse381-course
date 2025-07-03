@@ -17,6 +17,9 @@ e = 5945270277430017699389071915534874484280242574746323799752862797471282696460
 
 n = None
 d = None
+print(f"n={n}")
+print(f"e={e}")
+print(f"d={d}")
 
 # Encrypting each letter separately
 
