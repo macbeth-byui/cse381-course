@@ -1,10 +1,8 @@
 ﻿/* CSE 381 - Huffman Tree
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. S5.
+*  file completed in a public file sharing site. F5.
 *
-*  Instructions: Implement the Profile, BuildTree, _CreateEncodingMap,
-*  Encode, and Decode function per the instructions in the comments.  
-*  Run all tests in HuffmanTreeTest.cs to verify your code.
+*  Instructions: Refer to W10 Prove: Assignment in Canvas for detailed instructions.
 */
 
 namespace AlgorithmLib;
@@ -62,7 +60,7 @@ public static class HuffmanTree
      *     A dictionary where key is the letter and value is the
      *     huffman code.
      */
-    public static Dictionary<char, string> CreateEncodingMap(Node tree)
+    public static Dictionary<char, string> CreateEncodingMap(Node? tree)
     {
         return new Dictionary<char, string>();
     }
@@ -82,7 +80,7 @@ public static class HuffmanTree
      *  Outputs:
      *     none
      */
-    public static void _CreateEncodingMap(Node node, string code, Dictionary<char, string> map)
+    public static void _CreateEncodingMap(Node? node, string code, Dictionary<char, string> map)
     {
     }
 
@@ -108,7 +106,7 @@ public static class HuffmanTree
      *  Outputs:
      *     decoded text
      */
-    public static string Decode(string text, Node tree)
+    public static string Decode(string text, Node? tree)
     {
         return "";
     }

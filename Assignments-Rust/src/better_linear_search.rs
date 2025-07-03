@@ -1,9 +1,8 @@
 /* CSE 381 - BetterLinearSerach
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.
+*  file completed in a public file sharing site. F5.
 *
-*  Instructions: Implement the search function per the instructions
-*  in the comments.  Run all tests at the bottom of this file to verify your code.
+*  Instructions: Refer to W01 Prove: Assignment in Canvas for detailed instructions.
 */
 
 #[allow(clippy::manual_find)]

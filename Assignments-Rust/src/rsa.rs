@@ -1,10 +1,8 @@
 /* CSE 381 - RSA 
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.
+*  file completed in a public file sharing site. F5.
 *
-*  Instructions: Implement the euclid, mod_expo, generate_private_key,
-*  encrypt, and decrypt functions per the instructions in the comments.  
-*  Run all tests at the bottom of this file to verify your code.
+*  Instructions: Refer to W09 Prove: Assignment in Canvas for detailed instructions.
 */
 
 use num_bigint::BigInt;

@@ -1,10 +1,8 @@
 /* CSE 381 - Convex Hull (Graham Scan)
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. 
+*  file completed in a public file sharing site. F5.
 *
-*  Instructions: Implement the orientation, get_angle, get_dist, and
-*  gen_hull functions per the instructions in the comments.  
-*  Run all tests at the bottom of this file to verify your code.
+*  Instructions: Refer to W11 Prove: Assignment in Canvas for detailed instructions.
 */
 
 use std::cmp::Ordering;

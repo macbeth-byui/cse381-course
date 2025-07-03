@@ -8,3 +8,4 @@
 .idea
 *.beam
 \__pycache__
+\target

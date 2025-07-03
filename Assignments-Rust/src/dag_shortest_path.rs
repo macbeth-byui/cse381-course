@@ -1,9 +1,8 @@
 /* CSE 381 - DAG Shortest Path
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.
+*  file completed in a public file sharing site. F5.
 *
-*  Instructions: Implement the sort and search functions per the instructions
-*  in the comments.  Run all tests at the bottom of this file to verify your code.
+*  Instructions: Refer to W05 Prove: Assignment in Canvas for detailed instructions.
 */
 
 use crate::graph::{Graph, GraphError, INF};
