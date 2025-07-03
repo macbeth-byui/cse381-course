@@ -34,7 +34,7 @@ def find_negative_weight_cycle(graph, pred, vertex):
     # follow the predecessors for vertex until we complete a cycle
     while visited[curr] == False:
         visited[curr] = True
-        x = pred[curr]
+        curr = pred[curr]
     # Curr is a vertex on a negative-weight cycle.  
     start = curr
     cycle = [curr]
