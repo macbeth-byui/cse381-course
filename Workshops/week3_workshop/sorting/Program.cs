@@ -57,12 +57,12 @@ class Program
         {
             return;
         }
-		
-		// Do your sorting here
-        
+
+        // Do your sorting here.  The first one does nothing.
+        var sorted_books = books.AsEnumerable();
 		
 		// Display the books
-        foreach (var book in books)
+        foreach (var book in sorted_books)
         {
             Console.WriteLine(book);
         }
