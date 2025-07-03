@@ -29,11 +29,11 @@ def shortest_path(graph, start_vertex):
 
 def find_negative_weight_cycle(graph, pred, vertex):
     # vertex is either on the cycle or can be reached from the cycle
-    visited = [False]*graph.size()
+    visited = set()
     curr = vertex
     # follow the predecessors for vertex until we complete a cycle
-    while visited[curr] == False:
-        visited[curr] = True
+    while curr not in visited:
+        visited.add(curr)
         curr = pred[curr]
     # Curr is a vertex on a negative-weight cycle.  
     start = curr
