@@ -10,7 +10,7 @@ def shortest_path(graph, start_vertex):
     pred = [INF] * graph.size()
     distance[start_vertex] = 0
 
-    for _ in range(graph.size()): 
+    for _ in range(graph.size()-1): 
         changesMade = False
         for vertex in range(0,graph.size()):
             if distance[vertex] != INF:

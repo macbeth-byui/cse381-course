@@ -19,11 +19,12 @@ def shortest_path_array(graph, start_vertex):
     while len(unvisited) > 0:
         vertex = min(unvisited, key=lambda v : distance[v])
         unvisited.remove(vertex)
-        for edge in graph.edges(vertex):
-            if distance[vertex] + edge.weight < distance[edge.destId]:
-                distance[edge.destId] = distance[vertex] + edge.weight
-                pred[edge.destId] = vertex
-                count += 1
+        if distance[vertex] != INF:
+            for edge in graph.edges(vertex):
+                if distance[vertex] + edge.weight < distance[edge.destId]:
+                    distance[edge.destId] = distance[vertex] + edge.weight
+                    pred[edge.destId] = vertex
+                    count += 1
     return (distance, pred, count)
 
 # Shortest Path using a Priority Queue / Heap - O(V log V + E log V)
@@ -40,13 +41,13 @@ def shortest_path_priqueue(graph, start_vertex):
     while queue.size() > 0:
 
         vertex = queue.dequeue()
-        
-        for edge in graph.edges(vertex):
-            if distance[vertex] + edge.weight < distance[edge.destId]:
-                distance[edge.destId] = distance[vertex] + edge.weight
-                pred[edge.destId] = vertex;
-                queue.decrease_priority(edge.destId, distance[edge.destId])
-                count += 1
+        if distance[vertex] != INF:
+            for edge in graph.edges(vertex):
+                if distance[vertex] + edge.weight < distance[edge.destId]:
+                    distance[edge.destId] = distance[vertex] + edge.weight
+                    pred[edge.destId] = vertex;
+                    queue.decrease_priority(edge.destId, distance[edge.destId])
+                    count += 1
 
     return (distance,pred,count)
 

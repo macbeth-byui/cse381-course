@@ -15,11 +15,11 @@ def shortest_path(graph, start_vertex):
     while len(unvisited) > 0:
         vertex = min(unvisited, key=lambda v : distance[v])
         unvisited.remove(vertex)
-        
-        for edge in graph.edges(vertex):
-            if distance[vertex] + edge.weight < distance[edge.destId]:
-                distance[edge.destId] = distance[vertex] + edge.weight
-                pred[edge.destId] = vertex;
+        if distance[vertex] != INF:
+            for edge in graph.edges(vertex):
+                if distance[vertex] + edge.weight < distance[edge.destId]:
+                    distance[edge.destId] = distance[vertex] + edge.weight
+                    pred[edge.destId] = vertex;
 
     return (distance,pred)
 
