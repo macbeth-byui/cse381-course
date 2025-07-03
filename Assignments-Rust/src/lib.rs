@@ -1,3 +1,10 @@
+/* CSE 381 - Rust Modules
+*  (c) BYU-Idaho - It is an honor code violation to post this
+*  file completed in a public file sharing site. 
+*
+*  Do not modify this file. 
+*/
+
 pub mod binary_search;
 pub mod merge_sort;
 pub mod quick_sort;
