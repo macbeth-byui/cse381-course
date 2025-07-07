@@ -58,14 +58,14 @@ def _create_encoding_map(node, code, map):
 
     
 def encode(text, map):
-    result = ""
+    result = []
     for letter in text:
-        result += map[letter]
-    return result
+        result.append(map[letter])
+    return "".join(result)
 
 def decode(text, tree):
     curr_node = tree
-    result = ""
+    result = []
     index = 0
     while index < len(text):
         # Traverse the tree until we get to a leaf
@@ -76,9 +76,9 @@ def decode(text, tree):
 
         if curr_node.left is None and curr_node.right is None:
             # Found the decoded letter in the leaf
-            result += curr_node.letter
+            result.append(curr_node.letter)
             curr_node = tree  # Start over again
         index += 1
-    return result
+    return "".join(result)
 
 

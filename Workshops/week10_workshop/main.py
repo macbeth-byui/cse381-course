@@ -31,7 +31,7 @@ def convert_from_bit_stream(byte_array):
     we actually have 8 bits.  We won't add the padding to the last
     byte because bits those additional bits were not in the original bit string.
     """
-    result = ""
+    result = []
     for index in range(len(byte_array)):
         # For each byte, convert to a string of 1's and 0's
         # Remove the '0b' from the front. We need to have the
@@ -41,8 +41,8 @@ def convert_from_bit_stream(byte_array):
         if index < len(byte_array)-1:
             # Add some padding to the left
             binary = binary.zfill(8)
-        result += binary
-    return result
+        result.append(binary)
+    return "".join(result)
 
 def compress():
 
