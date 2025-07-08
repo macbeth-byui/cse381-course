@@ -25,6 +25,8 @@ public static class ConvexHull
         public readonly double X;
         public readonly double Y;
 
+        public static double TOLERANCE = 0.001;
+
         public Point(double x, double y)
         {
             X = x;
@@ -34,8 +36,8 @@ public static class ConvexHull
         /* This function supports testing */
         public bool Equals(Point point)
         {
-            return Math.Abs(X - point.X) < 0.001 && 
-                   Math.Abs(Y - point.Y) < 0.001;
+            return Math.Abs(X - point.X) < TOLERANCE &&
+                   Math.Abs(Y - point.Y) < TOLERANCE;
         }
     }
 

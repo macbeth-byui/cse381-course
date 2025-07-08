@@ -9,6 +9,7 @@ import random
 COLINEAR = 0
 CONVEX = 1
 CONCAVE = 2
+TOLERANCE = 0.001
 
 class Point:
 

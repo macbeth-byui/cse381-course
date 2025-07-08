@@ -9,6 +9,7 @@ import random
 COLINEAR = 0
 CONVEX = 1
 CONCAVE = 2
+TOLERANCE = 0.001
 
 class Point:
 
@@ -26,7 +27,7 @@ def points_to_str(points):
 
 def orientation(a, b, c):
     cross_prod = (b.x - a.x) * (c.y - b.y) - (b.y - a.y) * (c.x - b.x)
-    if cross_prod == 0:
+    if abs(cross_prod) < TOLERANCE:
         return COLINEAR
     elif cross_prod > 0:
         return CONVEX
