@@ -166,11 +166,8 @@ mod tests {
     #[test]
     fn test2_build_tree() {
         let text = "aabbbccccdde";
-        println!("{}",text);
         let profiled_text = profile(text);
-        println!("{:?}", profiled_text);
         let tree = build_tree(&profiled_text);
-        println!("{:?}", tree);
         assert!(tree.is_some());
         let expected_tree = Tree {count: 12, root :
             Box::new(Node::Support(
