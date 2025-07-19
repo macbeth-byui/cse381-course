@@ -25,6 +25,7 @@ public static class ConvexHull
         public readonly double X;
         public readonly double Y;
 
+        // Used for comparison of doubles
         public static double TOLERANCE = 0.001;
 
         public Point(double x, double y)
