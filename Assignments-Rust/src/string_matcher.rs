@@ -51,7 +51,7 @@ mod tests {
 
     #[test]
     fn test1_build_fsm1() {
-        let fsm = build_fsm("AAC", &vec!['A', 'C', 'G', 'T']);
+        let fsm = build_fsm("AAC", &['A', 'C', 'G', 'T']);
         assert_eq!(fsm, vec![
             vec![('A', 1), ('C', 0), ('G', 0), ('T', 0)].into_iter().collect(),
             vec![('A', 2), ('C', 0), ('G', 0), ('T', 0)].into_iter().collect(),
@@ -62,7 +62,7 @@ mod tests {
 
     #[test]
     fn test2_build_fsm1() {
-        let fsm = build_fsm("CBCBA", &vec!['A', 'B', 'C']);
+        let fsm = build_fsm("CBCBA", &['A', 'B', 'C']);
         assert_eq!(fsm, vec![
             vec![('A', 0), ('B', 0), ('C', 1)].into_iter().collect(),
             vec![('A', 0), ('B', 2), ('C', 1)].into_iter().collect(),
@@ -75,28 +75,28 @@ mod tests {
 
     #[test]
     fn test3_match1() {
-        let results = match_pattern("GTAACAGTAAACG", "AAC", &vec!['A', 'C', 'G', 'T']);
+        let results = match_pattern("GTAACAGTAAACG", "AAC", &['A', 'C', 'G', 'T']);
         assert!(results.is_some());
         assert_eq!(results.unwrap(), vec![4, 11]);
     }
 
     #[test]
     fn test4_match2() {
-        let results = match_pattern("GTAACAGTAAACG", "AA", &vec!['A', 'C', 'G', 'T']);
+        let results = match_pattern("GTAACAGTAAACG", "AA", &['A', 'C', 'G', 'T']);
         assert!(results.is_some());
         assert_eq!(results.unwrap(), vec![3, 9, 10]);
     }
 
     #[test]
     fn test5_match3() {
-        let results = match_pattern("ABCBCABCBCBC", "CBC", &vec!['A', 'B', 'C']);
+        let results = match_pattern("ABCBCABCBCBC", "CBC", &['A', 'B', 'C']);
         assert!(results.is_some());
         assert_eq!(results.unwrap(), vec![4, 9, 11]);
     }
 
     #[test]
     fn test6_no_matches() {
-        let results = match_pattern("GTAACAGTAAACG", "AACT", &vec!['A', 'C', 'G', 'T']);
+        let results = match_pattern("GTAACAGTAAACG", "AACT", &['A', 'C', 'G', 'T']);
         assert!(results.is_some());
         assert_eq!(results.unwrap(), vec![]);
     }
