@@ -18,9 +18,14 @@ use std::cmp::Ordering;
 *  Errors: If the target is not found, then return the error Option: None
 */
 pub fn search<T: Ord>(data : &[T], target : &T) -> Option<usize> {
+    // We have to check for an empty 
+    // list becuase len() returns a usize and
+    // len-1 would be invalid.
     if data.is_empty() {
         return None;
     }
+    // Start the recursion and return whatever
+    // results comes back.
     _search(data, target, 0, data.len()-1)
 }
 

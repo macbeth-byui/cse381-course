@@ -8,9 +8,16 @@
 use std::collections::HashMap;
 use crate::pqueue::PQueue;
 
-/* The Huffman Tree dynamically allocates each node of the tree (Box).  Since the
- * tree will be placed entirely into a PQueue, the count for the entire tree
- * is stored so it can be used as the priority_key in the PQueue.  The Tree implements
+/* The Huffman Tree dynamically is organized a little differently in Rust.  In 
+ * a form of polymorphism, we define each Node of the tree as being is a Support
+ * node or a Leaf node.  A support node contains children and a leaf node contains
+ * the encoded letter.  The tree is defined as the root node (either a leaf or a support
+ * node) and the count that represents the tree.  When we create a tree, we will set 
+ * the count in the Tree object and then create a root node (starting with a 
+ * leaf node) to store in the Tree.
+ * 
+ * In the tree, the nodes will all be allocated on the Heap.  This is done
+ * in Rust by using the Box<T> structure.  The Tree implements
  * the Eq, PartialEq, Hash, and Clone so that it will support the PQueue.
 */
 #[derive(Debug, PartialEq, Hash, Clone)]
@@ -22,10 +29,6 @@ pub struct Tree {
 impl Eq for Tree {
 }
 
-/* Each Node of the tree is either a Leaf (representing a letter) or is
-   a Support node (not representing a letter).  The Support node provides
-   for dynamically allocated nodes going (left,right).
- */
 #[derive(Debug, PartialEq, Hash, Clone)]
 enum Node {
     Support(Box<Node>, Box<Node>),

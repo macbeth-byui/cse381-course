@@ -13,9 +13,14 @@
 *     none
 */
  pub fn sort<T: Ord>(data : &mut [T]) {
+    // We have to check for an empty 
+    // list becuase len() returns a usize and
+    // len-1 would be invalid.
     if data.is_empty() {
         return;
     }
+    // Start the recursion and return whatever
+    // result comes back.
     _sort(data, 0, data.len()-1)
 }
 
