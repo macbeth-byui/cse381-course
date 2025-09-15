@@ -55,7 +55,7 @@ impl Graph {
     /* Return an iterator cotaining the edges for a vertex.  Err is returned if the 
      * vertex is invalid.
      */
-    pub fn edges(&self, vertex_id : usize) -> Result<Iter<Edge>, GraphError> {
+    pub fn edges(&self, vertex_id : usize) -> Result<Iter<'_, Edge>, GraphError> {
         if vertex_id >= self.vertices.len() {
             return Err(GraphError::InvalidVertex);
         }
