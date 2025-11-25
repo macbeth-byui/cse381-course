@@ -29,7 +29,9 @@ class PQueue:
                 self._heap[parentNode], self._heap[currNode] = self._heap[currNode], self._heap[parentNode]
                 self._lookup[self._heap[currNode].value] = currNode
                 self._lookup[self._heap[parentNode].value] = parentNode
-            currNode = parentNode
+                currNode = parentNode
+            else:
+                break
 
     def bubble_down(self, currNode):
         while not self.is_leaf(currNode):
@@ -40,13 +42,17 @@ class PQueue:
                     self._heap[currNode], self._heap[leftNode] = self._heap[leftNode], self._heap[currNode]
                     self._lookup[self._heap[currNode].value] = currNode
                     self._lookup[self._heap[leftNode].value] = leftNode
-                currNode = leftNode
+                    currNode = leftNode
+                else:
+                    break
             else:
                 if self._heap[currNode].priority > self._heap[rightNode].priority:
                     self._heap[currNode], self._heap[rightNode] = self._heap[rightNode], self._heap[currNode]
                     self._lookup[self._heap[currNode].value] = currNode
                     self._lookup[self._heap[rightNode].value] = rightNode
-                currNode = rightNode
+                    currNode = rightNode
+                else:
+                    break
 
 
     def decrease_priority(self, value, priority):

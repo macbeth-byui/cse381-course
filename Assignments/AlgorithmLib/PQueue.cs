@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Priority Queue
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. S5.
+*  file completed in a public file sharing site. 42
 *
 *  Do not modify this file.  You will use this in your code.
 */
@@ -58,8 +58,11 @@ public class PQueue<T> where T : notnull
                 // Update the lookup map with new array indices
                 _lookup[_heap[curr].Value] = curr;
                 _lookup[_heap[parent].Value] = parent;
+                curr = parent;
+            } else
+            {
+                break;
             }
-            curr = parent;
         }
     }
 
@@ -79,9 +82,11 @@ public class PQueue<T> where T : notnull
                     (_heap[curr], _heap[left]) = (_heap[left], _heap[curr]);
                     _lookup[_heap[curr].Value] = curr;
                     _lookup[_heap[left].Value] = left;
+                    curr = left;
+                } else
+                {
+                    break;
                 }
-
-                curr = left;
             }
             // Go right otherwise
             else 
@@ -92,9 +97,12 @@ public class PQueue<T> where T : notnull
                     (_heap[curr], _heap[right]) = (_heap[right], _heap[curr]);
                     _lookup[_heap[curr].Value] = curr;
                     _lookup[_heap[right].Value] = right;
+                    curr = right;
                 }
-
-                curr = right;
+                else
+                {
+                    break;
+                }
             }
         }
     }
