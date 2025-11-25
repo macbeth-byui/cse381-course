@@ -5,6 +5,14 @@
 *  Instructions: Refer to W01 Prove: Assignment in Canvas for detailed instructions.
 */
 
+// NOTE: These statements will supress warnings in your code.  It is recommended
+// that you comment these out when you start on this assignment
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(dead_code)]
+
+// NOTE: This warning should be supressed since you are re-implementing a 
+// common find function in Rust.
 #[allow(clippy::manual_find)]
 
 /* Search for an item in a list.  Ignore duplicates by exiting

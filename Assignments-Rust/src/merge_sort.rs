@@ -5,6 +5,12 @@
 *  Instructions: Refer to W03 Prove: Assignment in Canvas for detailed instructions.
 */
 
+// NOTE: These statements will supress warnings in your code.  It is recommended
+// that you comment these out when you start on this assignment
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(dead_code)]
+
 /* Use Merge Sort to sort a list of values in place
 *
 *  Inputs:

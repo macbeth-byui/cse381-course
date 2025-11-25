@@ -2,8 +2,14 @@
  *  (c) BYU-Idaho - It is an honor code violation to post this
  *  file completed in a public file sharing site. F5.
  *
-*  Instructions: Refer to W04 Prove: Assignment in Canvas for detailed instructions.
+ *  Instructions: Refer to W04 Prove: Assignment in Canvas for detailed instructions.
  */
+
+// NOTE: These statements will supress warnings in your code.  It is recommended
+// that you comment these out when you start on this assignment
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(dead_code)]
 
 /* Use Quick Sort to sort a list of values in place
 *

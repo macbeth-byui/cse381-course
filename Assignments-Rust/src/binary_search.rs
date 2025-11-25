@@ -5,6 +5,12 @@
 *  Instructions: Refer to W02 Prove: Assignment in Canvas for detailed instructions.
 */
 
+// NOTE: These statements will supress warnings in your code.  It is recommended
+// that you comment these out when you start on this assignment
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(dead_code)]
+
 use std::cmp::Ordering;
 
 /* Use Binary Search to search for an item in a list.

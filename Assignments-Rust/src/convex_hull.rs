@@ -5,6 +5,12 @@
 *  Instructions: Refer to W11 Prove: Assignment in Canvas for detailed instructions.
 */
 
+// NOTE: These statements will supress warnings in your code.  It is recommended
+// that you comment these out when you start on this assignment
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(dead_code)]
+
 use std::cmp::Ordering;
 
 /* Used for comparing f64 in point objects */

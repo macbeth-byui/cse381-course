@@ -4,6 +4,13 @@
 *
 *  Instructions: Refer to W07 Prove: Assignment in Canvas for detailed instructions.
 */
+
+// NOTE: These statements will supress warnings in your code.  It is recommended
+// that you comment these out when you start on this assignment
+#![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(dead_code)]
+
 use crate::graph::{Graph, INF, GraphError};
 
 /* Find the Shortest Path in a graph using the Bellman Ford Algorithm
