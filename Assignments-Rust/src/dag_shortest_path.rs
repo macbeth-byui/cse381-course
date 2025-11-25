@@ -111,4 +111,22 @@ mod tests {
         assert_eq!(dist, vec![INF, 0.0, 2.0, 6.0, 5.0, 3.0]);
         assert_eq!(pred, vec![None, None, Some(1), Some(1), Some(3), Some(4)]);
     }
+
+    #[test]
+    fn test4_dag3() {
+        let mut graph = Graph::new(5);
+        let _ = graph.add_edge(0, 1, 1.0);
+        let _ = graph.add_edge(0, 3, 5.0);
+        let _ = graph.add_edge(1, 3, 2.0);
+        let _ = graph.add_edge(1, 4, 6.0);
+        let _ = graph.add_edge(2, 3, 2.0);
+        let _ = graph.add_edge(2, 4, 1.0);
+        let _ = graph.add_edge(3, 4, 1.0);
+
+        let result = shortest_path(&graph, 0);
+        assert!(result.is_ok());
+        let (dist, pred) = result.unwrap();
+        assert_eq!(dist, vec![0.0, 1.0, INF, 3.0, 4.0]);
+        assert_eq!(pred, vec![None, Some(0), None, Some(1), Some(3)]);
+    }
 }

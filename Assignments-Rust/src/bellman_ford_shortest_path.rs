@@ -46,7 +46,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test1_no_negative_cycle() {
+    fn test1_no_negative_cycle1() {
         let mut graph = Graph::new(5);
         let _ = graph.add_edge(0, 1, 6.0);
         let _ = graph.add_edge(0, 3, 7.0);
@@ -64,6 +64,25 @@ mod tests {
         let (dist,pred) = result.unwrap();
         assert_eq!(dist, vec![0.0, 2.0, 4.0, 7.0, -2.0]);
         assert_eq!(pred, vec![None, Some(2), Some(3), Some(0), Some(1)]);
+    }
+
+     #[test]
+    fn test2_no_negative_cycle2() {
+        let mut graph = Graph::new(7);
+        let _ = graph.add_edge(0, 1, 3.0);
+        let _ = graph.add_edge(1, 2, 5.0);
+        let _ = graph.add_edge(1, 4, 4.0);
+        let _ = graph.add_edge(2, 3, 2.0);
+        let _ = graph.add_edge(3, 5, 1.0);
+        let _ = graph.add_edge(4, 3, 2.0);
+        let _ = graph.add_edge(4, 5, 4.0);
+        let _ = graph.add_edge(6, 5, 2.0);
+
+        let result = shortest_path(&graph, 1);
+        assert!(result.is_ok());
+        let (dist,pred) = result.unwrap();
+        assert_eq!(dist, vec![INF, 0.0, 5.0, 6.0, 4.0, 7.0, INF]);
+        assert_eq!(pred, vec![None, None, Some(1), Some(4), Some(1), Some(3), None]);
     }
 
     #[test]
