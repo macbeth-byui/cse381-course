@@ -86,9 +86,35 @@ public class BellmanFordShortestPathTest
         Assert.Pass();
 
     }
+
+     [Test]
+    public void Test3_NoNegativeCycle3()
+    {
+        Graph g = new Graph(4);
+        g.SetLabel(0, "A");
+        g.SetLabel(1, "B");
+        g.SetLabel(2, "C");
+        g.SetLabel(3, "D");
+        g.AddDirectedEdge(0, 3, 1);
+        g.AddDirectedEdge(1, 0, 1);
+        g.AddDirectedEdge(2, 1, 1);
+        g.AddDirectedEdge(3, 2, 1);
+        var (distance, pred) = BellmanFordShortestPath.ShortestPath(g, 3);
+        Assert.That(distance.Count, Is.EqualTo(4));
+        Assert.That(distance[0], Is.EqualTo(3));
+        Assert.That(distance[1], Is.EqualTo(2));
+        Assert.That(distance[2], Is.EqualTo(1));
+        Assert.That(distance[3], Is.EqualTo(0));
+        Assert.That(pred.Count, Is.EqualTo(4));
+        Assert.That(pred[0], Is.EqualTo(1));
+        Assert.That(pred[1], Is.EqualTo(2));
+        Assert.That(pred[2], Is.EqualTo(3));
+        Assert.That(pred[3], Is.EqualTo(Graph.INF));
+        Assert.Pass();
+    }
     
     [Test]
-    public void Test3_NegativeCycle()
+    public void Test4_NegativeCycle()
     {
         Graph g = new Graph(5);
         g.SetLabel(0, "s");

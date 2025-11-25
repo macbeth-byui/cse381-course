@@ -85,8 +85,23 @@ mod tests {
         assert_eq!(pred, vec![None, None, Some(1), Some(4), Some(1), Some(3), None]);
     }
 
+         #[test]
+    fn test3_no_negative_cycle3() {
+        let mut graph = Graph::new(4);
+        let _ = graph.add_edge(0, 3, 1.0);
+        let _ = graph.add_edge(1, 0, 1.0);
+        let _ = graph.add_edge(2, 1, 1.0);
+        let _ = graph.add_edge(3, 2, 1.0);
+
+        let result = shortest_path(&graph, 3);
+        assert!(result.is_ok());
+        let (dist,pred) = result.unwrap();
+        assert_eq!(dist, vec![3.0, 2.0, 1.0, 0.0]);
+        assert_eq!(pred, vec![Some(1), Some(2), Some(3), None]);
+    }
+
     #[test]
-    fn test2_negative_cycle() {
+    fn test4_negative_cycle() {
         let mut graph = Graph::new(5);
         let _ = graph.add_edge(0, 1, 6.0);
         let _ = graph.add_edge(0, 3, 7.0);
