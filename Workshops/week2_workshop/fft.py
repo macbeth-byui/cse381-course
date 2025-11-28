@@ -2,7 +2,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-import soundfile
+import soundfile as sf
 import math
 
 def FFT(amplitudes):
