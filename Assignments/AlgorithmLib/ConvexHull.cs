@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Convex Hull (Graham Scan)
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. F5.
+*  file completed in a public file sharing site. W6.
 *
 *  Instructions: Refer to W11 Prove: Assignment in Canvas for detailed instructions.
 */
