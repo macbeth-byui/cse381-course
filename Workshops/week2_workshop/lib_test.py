@@ -2,7 +2,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-import librosa
+import soundfile
 import math
 
 print("Libraries installed correctly.")

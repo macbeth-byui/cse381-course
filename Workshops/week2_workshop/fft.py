@@ -2,7 +2,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-import librosa
+import soundfile
 import math
 
 def FFT(amplitudes):
@@ -60,17 +60,29 @@ def gen_sig(signal_rate, freqs, noise=False):
 
 def load_audio(file):
     """
-    Load the amplitudes and signal rate from the audio file.
+    Load the amplitudes and signal rate from the audio file
+    using soundfile instead of librosa.
+    Ensures:
+      - mono signal
+      - length is a power of 2 (for our recursive FFT)
     """
-    
-    amplitudes, signal_rate = librosa.load(file)
 
-    # Need to pad it so that the size of amplitudes is a power of 2
+    amplitudes, signal_rate = sf.read(file, dtype='float32')  # amplitudes is float32 already
+
+    # If stereo (num_samples, 2), convert to mono by averaging channels
+    if amplitudes.ndim > 1:
+        amplitudes = np.mean(amplitudes, axis=1)
+        print("Converted to mono. New shape:", amplitudes.shape)
+
+    # Ensure length is a power of 2 for our FFT implementation
     size = len(amplitudes)
-    padding = int((2 ** math.ceil(math.log2(size))) - size)
-    amplitudes = np.concatenate((amplitudes, np.zeros(padding)))
+    next_pow2 = 2 ** math.ceil(math.log2(size))
+    padding = next_pow2 - size
 
-    return (amplitudes, signal_rate)
+    if padding > 0:
+        amplitudes = np.concatenate((amplitudes, np.zeros(padding, dtype=amplitudes.dtype)))
+
+    return amplitudes, signal_rate
 
     
 def plot_signal(time, amplitude):
