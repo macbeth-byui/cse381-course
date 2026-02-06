@@ -3,9 +3,9 @@
 |Lifecycle Phase|Task ID|Task                         |Duration|Predecssors   |Successors        |Critical Path    |
 |---------------|-------|-----------------------------|--------|--------------|------------------|-----------------|
 |Project Start  |       |                             |        |              |                  |                 |
-|               |      0|Project Start                |15      |0             |1, 2, 3, 4, 5, 9  |                 |
-|Planning       |       |                             |        |              |                  |                 |     
-|Planning       |       |                             |        |              |                  |                 | 
+|               |      0|Project Start                |0       |0             |1, 2, 3, 4, 5, 9  |                 |
+|Planning       |       |                             |        |              |                  |                 |
+|Planning       |       |                             |        |              |                  |                 |
 |               |      1|Write PSAC                   |10      |0             |6                 |                 |
 |               |      2|Write SDP                    |10      |0             |6, 10             |                 |
 |               |      3|Write SVP                    |10      |0             |6                 |                 |
@@ -47,8 +47,7 @@
 |               |     33|Project End                  |0       |32            |                  |                 |
 |               |       |                             |        |              |**Total Duration**|                 |  
 
-
-**Glossary**
+## Glossary
 
 * PSAC - Plan for Software Aspects of Certification
 * SCMP - Software Configuratoin Management Plan
@@ -57,6 +56,4 @@
 * SOI - Stage of Involvement (Audit)
 * SQAP - Software Quality Assurance Plan
 * SRS - Software Requirements Specification
-* SVP - Software Verification Paln
-
-
+* SVP - Software Verification Plan
