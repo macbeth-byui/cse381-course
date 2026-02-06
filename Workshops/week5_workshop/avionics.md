@@ -3,8 +3,7 @@
 |Lifecycle Phase|Task ID|Task                         |Duration|Predecssors   |Successors        |Critical Path    |
 |---------------|-------|-----------------------------|--------|--------------|------------------|-----------------|
 |Project Start  |       |                             |        |              |                  |                 |
-|               |      0|Project Start                |0       |0             |1, 2, 3, 4, 5, 9  |                 |
-|Planning       |       |                             |        |              |                  |                 |
+|               |      0|Project Start                |0       |              |1, 2, 3, 4, 5, 9  |                 |
 |Planning       |       |                             |        |              |                  |                 |
 |               |      1|Write PSAC                   |10      |0             |6                 |                 |
 |               |      2|Write SDP                    |10      |0             |6, 10             |                 |
