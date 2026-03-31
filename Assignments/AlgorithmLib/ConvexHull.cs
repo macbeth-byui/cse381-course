@@ -95,6 +95,6 @@ public static class ConvexHull
     public static List<Point> GenerateHull(List<Point> points)
     {
         
-        return new List<Point>();
+        return [];
     }
 }

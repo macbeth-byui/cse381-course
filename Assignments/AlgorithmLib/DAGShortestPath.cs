@@ -19,7 +19,7 @@ public static class DAGShortestPath
      */
     public static List<int> Sort(Graph g)
     {
-        return new List<int>();
+        return [];
     } 
 
     /* Find the shortest path from a starting vertex to all
@@ -36,7 +36,7 @@ public static class DAGShortestPath
      */
     public static (List<int>, List<int>) ShortestPath(Graph g, int startVertex)
     {
-        return (new List<int>(), new List<int>());
+        return ([], []);
     } 
     
 }

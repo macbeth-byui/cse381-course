@@ -22,7 +22,7 @@ public static class StringMatcher
      */
     public static List<int> MatchPattern(string text,  string pattern, List<char> inputs)
     {
-        return new List<int>();
+        return [];
     }
 
     /* Build the Finite State Machine table for the pattern and list of valid
@@ -39,6 +39,6 @@ public static class StringMatcher
      */
     public static List<Dictionary<char, int>> BuildFSM(string pattern, List<char> inputs)
     {
-        return new List<Dictionary<char, int>>();
+        return [];
     }
 }

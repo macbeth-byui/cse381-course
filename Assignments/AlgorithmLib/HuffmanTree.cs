@@ -35,7 +35,7 @@ public static class HuffmanTree
      */
     public static List<(char,int)> Profile(String text)
     {
-        return new List<(char, int)>();
+        return [];
     }
     
     /* Create a huffman tree for all letters in the profile.  Use a PQueue object
@@ -62,7 +62,7 @@ public static class HuffmanTree
      */
     public static Dictionary<char, string> CreateEncodingMap(Node? tree)
     {
-        return new Dictionary<char, string>();
+        return [];
     }
     
     /* Recursively visit each node in the Huffman Tree

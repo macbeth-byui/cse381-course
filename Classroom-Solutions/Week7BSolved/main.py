@@ -10,7 +10,8 @@ def shortest_path(graph, start_vertex):
     pred = [INF] * graph.size()
     distance[start_vertex] = 0
 
-    for _ in range(graph.size()-1): 
+    vertex_relaxed = 0
+    for _ in range(graph.size()): 
         changesMade = False
         for vertex in range(0,graph.size()):
             if distance[vertex] != INF:
@@ -19,19 +20,14 @@ def shortest_path(graph, start_vertex):
                         changesMade = True
                         distance[edge.destId] = distance[vertex] + edge.weight
                         pred[edge.destId] = vertex
+                        vertex_relaxed = edge.destId
         if not changesMade:
             print("No Negative Cycle found!")
             return (distance, pred)
 
-    for vertex in range(0,graph.size()):
-        for edge in graph.edges(vertex):
-            if distance[vertex] + edge.weight < distance[edge.destId]:
-                cycle = find_negative_weight_cycle(graph, pred, edge.destId)
-                print(f"Negative Cycle: {cycle}")
-                return ([],[])
-
-    print("No Negative Cycle found!")
-    return (distance,pred)
+    cycle = find_negative_weight_cycle(graph, pred, vertex_relaxed)
+    print(f"Negative Cycle: {cycle}")
+    return ([],[])
 
 def find_negative_weight_cycle(graph, pred, vertex):
     # vertex is either on the cycle or can be reached from the cycle

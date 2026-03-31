@@ -24,6 +24,6 @@ public static class DijkstraShortestPath
      */
     public static (List<int>, List<int>) ShortestPath(Graph g, int startVertex)
     {
-        return (new List<int>(), new List<int>());
+        return ([], []);
     } 
 }
