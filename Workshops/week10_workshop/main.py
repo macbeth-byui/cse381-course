@@ -18,7 +18,12 @@ def convert_to_bit_stream(bit_string):
     while start < len(bit_string):
         # Take blocks of 8 bits at a time and interpret them in base 2
         # This integer is then converted to a byte and stored in the bytearray.
-        num = int(bit_string[start:start+8], 2)
+        # The last byte may have extra padding (zero's) added to the right (we want
+        # to be able to remove these easily when we decode).
+        chunk = bit_string[start:start+8]
+        if len(chunk) < 8:
+            chunk = chunk.ljust(8,'0') # Pad on the right for partial byte
+        num = int(chunk,2)
         result.append(num)
         start += 8
     return result
@@ -35,12 +40,8 @@ def convert_from_bit_stream(byte_array):
     for index in range(len(byte_array)):
         # For each byte, convert to a string of 1's and 0's
         # Remove the '0b' from the front. We need to have the
-        # leading 0's added back.  However, for the last byte,
-        # we shouldn't add additional 0's.
-        binary = bin(byte_array[index])[2:]
-        if index < len(byte_array)-1:
-            # Add some padding to the left
-            binary = binary.zfill(8)
+        # leading 0's added back.  
+        binary = bin(byte_array[index])[2:].zfill(8)
         result.append(binary)
     return "".join(result)
 

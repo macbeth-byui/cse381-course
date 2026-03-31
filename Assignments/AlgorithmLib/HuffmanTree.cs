@@ -29,11 +29,9 @@ public static class HuffmanTree
      *  Inputs:
      *     text - Source for the profile
      *  Outputs:
-     *     List of (letter,count) pairs that represent the profile
-     *     of the text.  This list must be sorted by letter to ensure
-     *     consistent huffman tree creation.
+     *     Dictionary mapping letters to frequencies
      */
-    public static List<(char,int)> Profile(String text)
+    public static Dictionary<char, int> Profile(String text)
     {
         return [];
     }
@@ -47,7 +45,7 @@ public static class HuffmanTree
      *  Outputs:
      *     The root node of a huffman tree
      */
-    public static Node BuildTree(List<(char, int)> profile)
+    public static Node BuildTree(Dictionary<char, int> profile)
     {
         return new Node();
     }

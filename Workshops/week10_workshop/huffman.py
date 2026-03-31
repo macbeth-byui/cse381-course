@@ -18,11 +18,11 @@ def profile(text):
             profile[letter] += 1
         else:
             profile[letter] = 1
-    return sorted([(letter, profile[letter]) for letter in profile.keys()])
+    return profile
 
 def build_tree(profile):
     q = PQueue()
-    for letter, count in profile:
+    for letter, count in profile.items():
         node = Node()
         node.letter = letter
         node.count = count
