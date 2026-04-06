@@ -1,128 +1,116 @@
 // CSE 381 REPL 1A Solution
 // C# Primer
 
-public class Rectangle
-{
-    public float Height {get; set;}
-    public float Width {get; set;}
-
-    public Rectangle(float height, float width) 
-    {
-        Height = height;
-        Width = width;
-    }
-
-    public float Area() 
-    {
-        return Height * Width;
-    }
-}
-
-public static class Stats
-{
-    public static float Average(List<int> numbers) 
-    {
-        return (float) numbers.Sum() / numbers.Count;
-    }
-
-    public static T Max<T>(List<T> values) where T : IComparable
-    {
-        if (values.Count == 0) {
-            throw new Exception("List is empty");
-        }
-        var maxValue = values[0];
-        for (var i=1; i<values.Count; i++)
-        {
-            if (values[i].CompareTo(maxValue) > 0)
-            {
-                maxValue = values[i];
-            }
-        }
-        return maxValue;
-    }
-
-    public static int Add(List<int>? values, int indexStart=0)
-    {
-        if (values == null)
-        {
-            return 0;
-        }
-        return values[indexStart..].Sum();
-    }
-}
-
 public static class Program 
 {
+    
     public static void Main (string[] args) 
     {
         Console.WriteLine ("Hello World");
-        int x = 5;
-        var y = 6.5;
 
-        Console.WriteLine($"x = {x} y = {y} x+y = {x+y}");
+        /***************************************************
+         * Variables
+         ***************************************************/
+
+        // int a = 5;
+        var a = 5;
+        double b = 6.5;
+        char c = 'a';
+        string d = "CSE381";
+        bool e = true;
+
+        Console.WriteLine($"a = {a} b = {b} c = {c} d = {d} e = {e}");
+        Console.WriteLine("===========================");
+
+        /***************************************************
+         * Division
+         ***************************************************/
+
+        var f = 42 / a;
+        var g = 42 / b;
+        Console.WriteLine($"f = {f} g = {g}");
+        Console.WriteLine("===========================");
+
+        /***************************************************
+         * Loops
+         ***************************************************/
 
         for (var i=0; i<10; i++) {
             Console.WriteLine(i);
         }
+        Console.WriteLine("===========================");
 
-        foreach (var i in Enumerable.Range(0,10)) {
+        foreach (var i in Enumerable.Range(5,10)) {  // Start at 5 and go 10 values
             Console.WriteLine(i);
         }
+        Console.WriteLine("===========================");
 
-        var list = new List<int>();
-        list.Add(10);
-        list.Add(20);
-        list.Add(30);
+        /***************************************************
+         * List Creation
+         ***************************************************/
 
-        foreach (var i in list) {
+        var list1 = new List<int>();
+        list1.Add(10);
+        list1.Add(20);
+        list1.Add(30);
+        List<int> list2 = [-7, 5, -4, 1, 2, 4, 8, 5];
+        List<int> list3 = Enumerable.Range(5,10).ToList();
+        List<int> list4 = Enumerable.Repeat(13,10).ToList();
+
+        foreach (var i in list4) {
             Console.WriteLine(i);
         }
+        Console.WriteLine("===========================");
 
-        Console.WriteLine($"First: {list[0]}");
-        Console.WriteLine($"Last: {list[^1]}");
+        /***************************************************
+         * Accessing by Index
+         ***************************************************/
 
-        var list2 = Enumerable.Range(0,10); 
-        list2 = list2.Select(x => 2*x);
-        list2 = list2.Select(_ => 42);
+        Console.WriteLine($"First: {list2[0]}");
+        Console.WriteLine($"Last: {list2[^1]}");
+        Console.WriteLine("===========================");
 
-        foreach (var i in list2) {
+        /***************************************************
+         * Slices
+         ***************************************************/
+
+        var list5 = list2[2..5];
+        var list6 = list2[..5];
+        var list7 = list2[2..];
+        foreach (var i in list6) {
             Console.WriteLine(i);
         }
+        Console.WriteLine("===========================");
 
-        var list3 = list2.ToList();
-        Console.WriteLine($"First: {list3[0]}");
+        /***************************************************
+         * Apply to each Element
+         ***************************************************/
 
-        var r = new Rectangle(3,5);
-        Console.WriteLine($"Area = {r.Area()}");
-        r.Height = 10;
-        Console.WriteLine($"Area = {r.Area()}");
+        var list8 = list2.Select(x => 2*x);
+        var list9 = list2.Select(_ => 42);
 
-        var list4 = new List<int> {3, 1, 6, 5, 4, 0};
-        var avg4 = Stats.Average(list4);
-        Console.WriteLine($"Avg: {avg4}");
-        
-        var max4 = Stats.Max(list4);
-        Console.WriteLine($"Max: {max4}");
-        
-        var list5 = new List<String> {"dog", "cat", "pig", "cow", "hamster", "bird"};
-        var max5 = Stats.Max(list5);
-        Console.WriteLine($"Max: {max5}");
+        foreach (var i in list8) {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("===========================");
 
-        var firstHalf = list5[..3];
-        var secondHalf = list5[3..];
-        Console.WriteLine(string.Join(", ", firstHalf));
-        Console.WriteLine(string.Join(", ", secondHalf));
+        /***************************************************
+         * Sorting
+         ***************************************************/
 
-        var result = Stats.Add(list4,3);
-        Console.WriteLine(result);
+        var list10 = list2.Order();
+        var list11 = list2.OrderBy(x => x*x);
+        List<(int, int)> list12 = [(-5,9), (-3,2), (4,7), (3,1), (-4,8)];
+        var list13 = list12.OrderBy(x => x.Item1*x.Item1).ThenBy(x => x.Item2);
 
-        result = Stats.Add(list4);
-        Console.WriteLine(result);
+        foreach (var i in list13) {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("===========================");
 
-        List<int>? list6 = null;
-        result = Stats.Add(list6);
-        Console.WriteLine(result);
-        
+        /***************************************************
+         * Dictionary Creation
+         ***************************************************/
 
         var accounts = new Dictionary<string, int>() {
             {"bob",332},
@@ -131,19 +119,84 @@ public static class Program
         };
 
         Console.WriteLine(accounts["bob"]);
-        
+        Console.WriteLine("===========================");
+
+        /***************************************************
+         * Access and Modify
+         ***************************************************/
+       
         accounts["bob"] += 100;
         Console.WriteLine(accounts["bob"]);
+        Console.WriteLine("===========================");
 
-        Console.Write("Enter name: ");
-        var name = Console.ReadLine()!;
+        /***************************************************
+         * Contains Key
+         ***************************************************/
+
+        var name = "george";
         if (accounts.ContainsKey(name))
         {
-            Console.WriteLine($"Account = ${accounts[name]}");
+            Console.WriteLine("Account Exists");
         }
         else
         {
-            Console.WriteLine("Name not found.");
+            Console.WriteLine("Account does not Exist");
         }
+        Console.WriteLine("===========================");
+
+        /***************************************************
+         * Loop Key/Value Pairs
+         ***************************************************/
+
+        foreach ((var key, var value) in accounts)
+        {
+            Console.WriteLine($"Key = {key} Value = {value}");
+        }
+        Console.WriteLine("===========================");
+        
+        /***************************************************
+         * Functions with Generics
+         ***************************************************/
+
+        var max1 = Max(list2);
+        var max2 = Max(["dog","cat","pig","cow","hamster","bird"]);
+
+        Console.WriteLine(max1);
+        Console.WriteLine(max2);
+        Console.WriteLine("===========================");
+
+        /***************************************************
+         * Nullable Types
+         ***************************************************/
+
+        Console.WriteLine(AddOne(5));
+        Console.WriteLine(AddOne(null));
     }
+
+    // public static int Max(List<int> values)
+    public static T Max<T>(List<T> values) where T : IComparable
+    {
+        if (values.Count == 0) {
+            throw new Exception("List is empty");
+        }
+        var maxValue = values[0];
+        for (var i=1; i<values.Count; i++)
+        {
+            // if (values[i] > maxValue)
+            if (values[i].CompareTo(maxValue) > 0)
+            {
+                maxValue = values[i];
+            }
+        }
+        return maxValue;
+    }
+
+    // public static int AddOne(int value)
+    public static int AddOne(int? value)
+    {
+        // return value + 1;        
+        return (value ?? 0) + 1;
+    }
+
+
 }
