@@ -9,3 +9,4 @@
 *.beam
 \__pycache__
 \target
+*.lscache
