@@ -39,7 +39,7 @@ def Merge(data, first, mid, last):
             sa2Index += 1
 
 def print_book(book):
-    print(f"{book["title"]:<50}{book["author"]:<28}{book["language"]:<18}{book["year"]:<5}")
+    print(f"{book['title']:<50}{book['author']:<28}{book['language']:<18}{book['year']:<5}")
 
 # Read the book API and convert to a list of dictionaries
 # Contains the keys: title, author, language, year

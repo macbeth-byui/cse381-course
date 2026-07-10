@@ -1,8 +1,15 @@
 ﻿// CSE 381 Workshop 3
+// Custom Objects to Sort
 
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
-// Structure to represent the JSON data we will read
+// Inform C# what we will be deserializing (a List of Book objects)
+[JsonSerializable(typeof(List<Book>))]
+internal partial class BookJsonContext : JsonSerializerContext
+{
+}
+
 public class Book
 {
     public required string title { get; set; }
@@ -12,7 +19,6 @@ public class Book
 
     public override string ToString()
     {
-		// Format the string with left alignment
         return $"{title,-50}{author,-28}{language,-18}{year,-5}";
     }
 
@@ -20,23 +26,18 @@ public class Book
 
 class Program
 {
-	// Read all the books from the API source
-	// Needs to be async due to the network call.  We might get
-	// a null list of books if there is a failure.
     static async Task<List<Book>?> Get_Books()
     {
         string url = "https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json"; 
         using HttpClient client = new HttpClient();
         try
         {
-			// Send request to the server
             HttpResponseMessage response = await client.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
-				// Read the response and deserialize the JSON string into a 
-				// list of book objects.
                 string data = response.Content.ReadAsStringAsync().Result;
-                return JsonSerializer.Deserialize<List<Book>>(data);
+                // Deserialize into a List<Book>
+                return JsonSerializer.Deserialize(data, BookJsonContext.Default.ListBook);
             }
             Console.WriteLine($"Error reading from API: {response.StatusCode}");
             return null;

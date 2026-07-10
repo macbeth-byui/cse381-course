@@ -1,6 +1,6 @@
 /* CSE 381 - Huffman Tree
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.  S6.
+*  file completed in a public file sharing site.  F6.
 *
 *  Instructions: Refer to W10 Prove: Assignment in Canvas for detailed instructions.
 */
@@ -47,11 +47,9 @@ enum Node {
 *  Inputs:
 *     text - Source for the profile
 *  Outputs:
-*     List of (letter,count) pairs that represent the profile
-*     of the text.  This list must be sorted by letter to ensure
-*     consistent huffman tree creation.
+*     HashMap mapping letters to frequencies
 */
-pub fn profile(text : &str) -> Vec<(char, u32)> {
+pub fn profile(text : &str) -> HashMap<char, u32> {
    todo!() 
 }
 
@@ -66,7 +64,7 @@ pub fn profile(text : &str) -> Vec<(char, u32)> {
 *  Errors:
 *     If the profile is empty, then return the error Option: None
 */
-pub fn build_tree(profile : &[(char, u32)]) -> Option<Tree> {
+pub fn build_tree(profile : &HashMap<char, u32>) -> Option<Tree> {
     todo!()
 }
 
@@ -145,6 +143,8 @@ pub fn decode(bit_string : &str, tree : &Option<Tree>) -> Option<String> {
 *  To run the tests, use the cargo tool from the command line:
 *     Run All Tests: cargo test huffman_tree
 *     Run One Test:  cargo test huffman_tree::tests::<test function name>
+*  You can also use the "Run Test" or "Debug" links in Visual Studio Code 
+*  next to each test function.
 */
 #[cfg(test)]
 mod tests {
@@ -154,83 +154,113 @@ mod tests {
     fn test1_profile() {
         let text = "the rain in spain stays mainly in the plain";
         let profiled_text = profile(text);
-        let expected_profile = vec![
-            (' ', 8),
-            ('a', 5),
-            ('e', 2),
-            ('h', 2),
-            ('i', 6),
-            ('l', 2),
-            ('m', 1),
-            ('n', 6),
-            ('p', 2),
-            ('r', 1),
-            ('s', 3),
-            ('t', 3),
-            ('y', 2),
-        ];
+        let mut expected_profile = HashMap::<char, u32>::new();
+        expected_profile.insert(' ', 8);
+        expected_profile.insert('a', 5);
+        expected_profile.insert('e', 2);
+        expected_profile.insert('h', 2);
+        expected_profile.insert('i', 6);
+        expected_profile.insert('l', 2);
+        expected_profile.insert('m', 1);
+        expected_profile.insert('n', 6);
+        expected_profile.insert('p', 2);
+        expected_profile.insert('r', 1);
+        expected_profile.insert('s', 3);
+        expected_profile.insert('t', 3);
+        expected_profile.insert('y', 2);
         assert_eq!(profiled_text, expected_profile);
     }
 
     #[test]
     fn test2_build_tree() {
-        let text = "aabbbccccdde";
+        let text = "the rain in spain stays mainly in the plain";
         let profiled_text = profile(text);
         let tree = build_tree(&profiled_text);
-        assert!(tree.is_some());
-        let expected_tree = Tree {count: 12, root :
-            Box::new(Node::Support(
-                Box::new(Node::Support(
-                    Box::new(Node::Leaf('a')),
-                    Box::new(Node::Support(
-                        Box::new(Node::Leaf('e')),
-                        Box::new(Node::Leaf('d')))
-                    ),
-                )),
-                Box::new(Node::Support(
-                    Box::new(Node::Leaf('b')),
-                    Box::new(Node::Leaf('c'))
-                )),
-            )) 
-        };
-        assert_eq!(tree.unwrap(), expected_tree);
-        
+        assert!(matches!(tree, Some(t) if t.count == 43));
      }
 
 
     #[test]
     fn test3_create_encoding_map() {
-        let text = "the rain in spain stays mainly in the plain";
-        let profiled_text = profile(text);
-        let tree = build_tree(&profiled_text);
+        let tree = Some(Tree {
+            count: 43,
+            root: Box::new(Node::Support(
+                Box::new(Node::Support(
+                    Box::new(Node::Support(
+                        Box::new(Node::Support(
+                            Box::new(Node::Leaf('l')),
+                            Box::new(Node::Leaf('e')),
+                        )),
+                        Box::new(Node::Support(
+                            Box::new(Node::Leaf('h')),
+                            Box::new(Node::Support(
+                                Box::new(Node::Leaf('r')),
+                                Box::new(Node::Leaf('m')),
+                            )),
+                        )),
+                    )),
+                    Box::new(Node::Support(
+                        Box::new(Node::Support(
+                            Box::new(Node::Leaf('p')),
+                            Box::new(Node::Leaf('y')),
+                        )),
+                        Box::new(Node::Leaf('a')),
+                    )),
+                )),
+                Box::new(Node::Support(
+                    Box::new(Node::Support(
+                        Box::new(Node::Support(
+                            Box::new(Node::Leaf('s')),
+                            Box::new(Node::Leaf('t')),
+                        )),
+                        Box::new(Node::Leaf('n')),
+                    )),
+                    Box::new(Node::Support(
+                        Box::new(Node::Leaf('i')),
+                        Box::new(Node::Leaf(' ')),
+                    )),
+                )),
+            )),
+        });
         let encoding = create_encoding_map(&tree);
         let mut expected = HashMap::<char, String>::new();
-        expected.insert('l',"11101".to_string());
-        expected.insert('e',"11111".to_string());
-        expected.insert('h',"11110".to_string());
-        expected.insert('r',"01011".to_string());
-        expected.insert('m',"01010".to_string());
+        expected.insert('l',"0000".to_string());
+        expected.insert('e',"0001".to_string());
+        expected.insert('h',"0010".to_string());
+        expected.insert('r',"00110".to_string());
+        expected.insert('m',"00111".to_string());
         expected.insert('p',"0100".to_string());
-        expected.insert('y',"11100".to_string());
+        expected.insert('y',"0101".to_string());
         expected.insert('a',"011".to_string());
-        expected.insert('s',"1001".to_string());
-        expected.insert('t',"1000".to_string());
+        expected.insert('s',"1000".to_string());
+        expected.insert('t',"1001".to_string());
         expected.insert('n',"101".to_string());
         expected.insert('i',"110".to_string());
-        expected.insert(' ',"00".to_string());
+        expected.insert(' ',"111".to_string());
         assert_eq!(encoding, expected);
     }
 
     #[test]
     fn test4_encode() {
         let text = "the rain in spain stays mainly in the plain";
-        let profiled_text = profile(text);
-        let tree = build_tree(&profiled_text);
-        let encoding = create_encoding_map(&tree);
+        let mut encoding = HashMap::<char, String>::new();
+        encoding.insert('l',"0000".to_string());
+        encoding.insert('e',"0001".to_string());
+        encoding.insert('h',"0010".to_string());
+        encoding.insert('r',"00110".to_string());
+        encoding.insert('m',"00111".to_string());
+        encoding.insert('p',"0100".to_string());
+        encoding.insert('y',"0101".to_string());
+        encoding.insert('a',"011".to_string());
+        encoding.insert('s',"1000".to_string());
+        encoding.insert('t',"1001".to_string());
+        encoding.insert('n',"101".to_string());
+        encoding.insert('i',"110".to_string());
+        encoding.insert(' ',"111".to_string());
         let encoded_bits = encode(text, &encoding);
         assert!(encoded_bits.is_some());
 
-        assert_eq!(encoded_bits.unwrap(), "10001111011111000101101111010100110101001001010001111010100100110000111110010010001010011110101111011110000110101001000111101111100010011101011110101");
+        assert_eq!(encoded_bits.unwrap(), "10010010000111100110011110101111110101111100001000111101011111000100101101011000111001110111101010000010111111010111110010010000111101000000011110101");
     }
 
     #[test]

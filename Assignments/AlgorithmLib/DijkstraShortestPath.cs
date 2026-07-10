@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Dijkstra Shortest Path
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.  S6.
+*  file completed in a public file sharing site.  F6.
 *
 *  Instructions: Refer to W06 Prove: Assignment in Canvas for detailed instructions.
 */
