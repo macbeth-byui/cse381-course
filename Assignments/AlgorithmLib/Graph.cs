@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Graph
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site. S5.
+*  file completed in a public file sharing site. W7.
 *
 *  Do not modify this file.  You will use this in your code.
 */

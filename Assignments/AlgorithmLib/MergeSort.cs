@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Merge Sort
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.  F6.
+*  file completed in a public file sharing site.  W7.
 *
 *  Instructions: Refer to W03 Prove: Assignment in Canvas for detailed instructions.
 */

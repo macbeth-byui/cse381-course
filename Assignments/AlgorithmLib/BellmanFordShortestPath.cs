@@ -1,6 +1,6 @@
 ﻿/* CSE 381 - Bellman Ford
 *  (c) BYU-Idaho - It is an honor code violation to post this
-*  file completed in a public file sharing site.  F6.
+*  file completed in a public file sharing site.  W7.
 *
 *  Instructions: Refer to W07 Prove: Assignment in Canvas for detailed instructions.
 */
